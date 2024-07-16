@@ -1,0 +1,49 @@
+.nav-container {
+    background-color: var(--Navbar);
+    background: solid;
+    max-height: 60px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 2.5vh 2.5vw;
+}
+
+.nav-icon{
+    display: none;
+}
+
+.nav-item, .logo_name {
+    text-decoration: none;
+    color: var(--IconesLinks);
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.nav-item:hover{
+    color:var(--Hover);
+    background-color: var(--Texto);
+}
+
+.logo_name{
+    font-weight: 700;
+    height: 40px;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo_icon{
+    height: 100%;
+    overflow: hidden;
+    object-fit: cover;
+    padding-bottom: 5px;
+    padding-right: 5px;
+}
+.svg-logo{
+    color:red;
+}
+
+@media (max-width: 992px) {
+    .nav-icon{
+        display: block;
+    }
+}

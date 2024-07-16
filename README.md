@@ -1,4 +1,4 @@
-# Projeto Final: uMusic
+# Projeto Final: uMusic 🎵
 Este projeto final foi realizado como parte da disciplina de Desenvolvimento para Plataformas Web, com o objetivo de aplicar os conhecimentos adquiridos ao longo do curso. O uMusic é uma plataforma online dedicada a oferecer uma experiência completa de descoberta e reprodução de música para seus usuários.
 
 ## Objetivos do Projeto

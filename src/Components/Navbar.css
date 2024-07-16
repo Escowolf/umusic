@@ -12,6 +12,11 @@
     display: none;
 }
 
+.nav-links{
+    align-items: center;
+    justify-content: center;
+}
+
 .nav-item, .logo_name {
     text-decoration: none;
     color: var(--IconesLinks);
@@ -37,9 +42,6 @@
     object-fit: cover;
     padding-bottom: 5px;
     padding-right: 5px;
-}
-.svg-logo{
-    color:red;
 }
 
 @media (max-width: 992px) {

@@ -4,11 +4,11 @@ function Footer() {
   return (<>
     <footer>
       <nav className="footer">
-        <p> © 2022 - nulamar - Desenvolvimento para plataformas web</p>
+        <p> © 2024. Desenvolvimento para plataformas web. Nulamar. </p>
         <ul className="nav-footer-items">
-          <a href="#"><i className="fa-brands fa-facebook" /></a>
-          <a href="#"><i className="fa-brands fa-instagram" /></a>
-          <a href="#"><i className="fa-brands fa-linkedin" /></a>
+          <a href="#"><i className="fa-brands fa-facebook nav-item" /></a>
+          <a href="#"><i className="fa-brands fa-instagram nav-item" /></a>
+          <a href="#"><i className="fa-brands fa-linkedin nav-item" /></a>
         </ul>
       </nav>
     </footer>

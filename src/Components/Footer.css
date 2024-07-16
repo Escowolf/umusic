@@ -1,14 +1,14 @@
 .footer {
     position: fixed;
-    height: 50px;
     bottom: 0;
     background-color: var(--NavFooter);
-    display: flex;
     width: 100%;
     justify-content: center;
     align-items: center;
+    text-align: center;
 }
 
-.nav-footer-items{
-    border: 1px solid red;
+.nav-footer-items .fa-brands{
+    padding: 5px;
+    font-size: 15px;
 }

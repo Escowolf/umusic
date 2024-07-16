@@ -1,5 +1,23 @@
-.principal{
-    color: #fdfdfd;
-    background: linear-gradient(0deg, rgba(71,0,75,1) 0%, rgba(93,26,74,1) 14%, rgba(182,72,77,1) 40%, rgba(229,113,71,1) 100%);
-    height: 100%;
+:root{
+     /* variables light-mode */
+  --Texto: #fdfdfd; 
+  --Background: #E57147; 
+  --Hover: rgba(71,0,75,1); 
+  --IconesLinks: #fdfdfd; 
+  --Navbar: #D85C30;
+  --NavFooter: #4F4F4F;
+   
+  color: var(--Texto);
+  background-color: var(--Background);
 }
+.section{
+  padding: 5vh 10vw;
+  max-height: 700px;
+}
+
+
+.column{
+  width: 50%;
+  padding: 10px;
+}
+

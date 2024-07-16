@@ -1,18 +1,18 @@
 import {Routes, Route} from "react-router-dom";
-import './Paginas/css/App.css';
-import Home from './Paginas/PaginasNoAuth/Home';
-import Faq from './Paginas/PaginasNoAuth/Faq';
-import Menu from './Paginas/PaginasNoAuth/Menu';
-import Rodape from './Paginas/PaginasNoAuth/Rodape';
-import Cadastro from './Paginas/PaginasNoAuth/Cadastro';
-import PlaylistDetail from "./Paginas/componentesLista/PlaylistDetail";
-import PlaylistList from "./Paginas/componentesLista/PlaylistList";
-import NewPlaylist from "./Paginas/PaginasAuth/NewPlaylist";
-import Login from "./Paginas/PaginasNoAuth/Login";
+import './App.css';
+import Home from './Pages/PaginasNoAuth/Home';
+import Faq from './Pages/PaginasNoAuth/Faq';
+import Menu from './Components/Menu';
+import Rodape from './Components/Rodape';
+import Cadastro from './Pages/PaginasNoAuth/Cadastro';
+import PlaylistDetail from "./Pages/componentesLista/PlaylistDetail";
+import PlaylistList from "./Pages/componentesLista/PlaylistList";
+import NewPlaylist from "./Pages/PaginasAuth/NewPlaylist";
+import Login from "./Pages/PaginasNoAuth/Login";
 import { useState } from "react";
-import MenuAuth from "./Paginas/user/MenuAuth";
-import HomeAuth from "./Paginas/PaginasAuth/HomeAuth";
-import Profile from "./Paginas/user/Profile";
+import MenuAuth from "./Pages/user/MenuAuth";
+import HomeAuth from "./Pages/PaginasAuth/HomeAuth";
+import Profile from "./Pages/user/Profile";
 
 function App() {
   const usuario = JSON.parse(localStorage.getItem('usuarioLogado'));
@@ -20,7 +20,6 @@ function App() {
 console.log(login);
   return (
     <div className="principal">
-      {/*useState verifica se há usuário logado, se não existir, abra Menu. Se existir, abra menuAuth */}
         {!login? (<Menu />) : (<MenuAuth /> ) }
         
       <Routes>

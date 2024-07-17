@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import FalseToken from '../../API/falseToken';
+import FalseToken from '../../api/falseToken';
 import axios from 'axios';
 import './PlayUser.css';
 

@@ -2,10 +2,13 @@
     position: fixed;
     bottom: 0;
     background-color: var(--NavFooter);
-    width: 100%;
+    width: fill;
     justify-content: center;
     align-items: center;
     text-align: center;
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 30px;
 }
 
 .nav-footer-items .fa-brands{

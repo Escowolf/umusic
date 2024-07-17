@@ -26,7 +26,7 @@ function App() {
       <Route path="/play" element={<PlaylistList />} />
       <Route path="/playlists/:_id" element={<PlaylistDetail />} />
       <Route path="/newplaylist" element={<NewPlaylist />} />
-      <Route path="/inscricao" element={<Cadastro />} />
+      <Route path="/sigin" element={<Cadastro />} />
       <Route path="/login" element={<Login />} />
       <Route path="/home" element={<HomeAuth />} />
       <Route path="/perfil" element={<Profile />} />

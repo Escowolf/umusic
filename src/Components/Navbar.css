@@ -1,39 +1,42 @@
 .nav-container {
     background-color: var(--Navbar);
     background: solid;
-    max-height: 60px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     padding: 2.5vh 2.5vw;
+    align-items: center;
+    justify-content: center;
 }
 
 .nav-icon{
     display: none;
 }
 
-.nav-links{
-    align-items: center;
-    justify-content: center;
-}
-
-.nav-item, .logo_name {
+.nav-item, .logo_name{
     text-decoration: none;
     color: var(--IconesLinks);
-    padding: 5px 10px;
+    padding: 0px 5px;
     border-radius: 5px;
+    margin:5px;
 }
 
 .nav-item:hover{
     color:var(--Hover);
     background-color: var(--Texto);
+    padding: 5px;
+}
+
+.logo{
+    height: 40px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
 }
 
 .logo_name{
     font-weight: 700;
-    height: 40px;
-    justify-content: center;
-    align-items: center;
+    font-size: 1.5vw;
 }
 
 .logo_icon{
@@ -41,7 +44,6 @@
     overflow: hidden;
     object-fit: cover;
     padding-bottom: 5px;
-    padding-right: 5px;
 }
 
 @media (max-width: 992px) {

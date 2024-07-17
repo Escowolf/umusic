@@ -1,0 +1,27 @@
+.PlaylistsContent{
+  padding: 5%;
+  background-color: rgba(0, 0, 0, 0.637);
+}
+.conteudo {
+    padding-top:5%;
+    display: flex;
+    flex-wrap: nowrap;
+    text-align: center;
+    overflow: scroll auto;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .conteudo > li{
+    text-align: center;
+    list-style: none;
+    display: inline-block;
+    background-color: rgb(255, 255, 255);
+    margin: 5px;
+}
+.sub {
+   color:rgb(255, 130, 52);
+}
+.itemNew{
+  width: 200px;
+}

@@ -1,0 +1,14 @@
+.footer {
+    position: fixed;
+    bottom: 0;
+    background-color: var(--NavFooter);
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.nav-footer-items .fa-brands{
+    padding: 5px;
+    font-size: 15px;
+}

@@ -1,26 +1,39 @@
-import {Routes, Route} from "react-router-dom";
-import './Paginas/css/App.css';
-import Home from './Paginas/Home';
-import Faq from './Paginas/Faq';
-import Menu from './Paginas/Menu';
-import Rodape from './Paginas/Rodape';
-import Cadastro from './Paginas/Cadastro';
-import PlaylistDetail from "./Paginas/componentesLista/PlaylistDetail";
-import PlaylistList from "./Paginas/componentesLista/PlaylistList";
+import { Routes, Route } from "react-router-dom";
+import './App.css';
+import Home from './Pages/PaginasNoAuth/Home';
+import Faq from './Pages/PaginasNoAuth/Faq';
+import Navbar from './Components/Navbar';
+import Footer from './Components/Footer';
+import Cadastro from './Pages/PaginasNoAuth/Cadastro';
+import PlaylistDetail from "./Pages/componentesLista/PlaylistDetail";
+import PlaylistList from "./Pages/componentesLista/PlaylistList";
+import NewPlaylist from "./Pages/PaginasAuth/NewPlaylist";
+import Login from "./Pages/PaginasNoAuth/Login";
+import { useState } from "react";
+import MenuAuth from "./Pages/user/MenuAuth";
+import HomeAuth from "./Pages/PaginasAuth/HomeAuth";
+import Profile from "./Pages/user/Profile";
 
 function App() {
-  return (
-    <div className="principal">
-    <Menu />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/faq" element={<Faq />} />
-        <Route path="/play" element={<PlaylistList/>} />
-        <Route path="/playlists/:id" element={<PlaylistDetail/>} />
-       <Route path="/inscricao" element={<Cadastro />} />
-      </Routes>
-    <Rodape />
-    </div>
+  const usuario = JSON.parse(localStorage.getItem('usuarioLogado'));
+  const [login, setLogin] = useState(usuario);
+  console.log(login);
+  return (<>
+    {!login ? (<Navbar />) : (<MenuAuth />)}
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/faq" element={<Faq />} />
+      <Route path="/play" element={<PlaylistList />} />
+      <Route path="/playlists/:_id" element={<PlaylistDetail />} />
+      <Route path="/newplaylist" element={<NewPlaylist />} />
+      <Route path="/inscricao" element={<Cadastro />} />
+      <Route path="/login" element={<Login />} />
+      <Route path="/home" element={<HomeAuth />} />
+      <Route path="/perfil" element={<Profile />} />
+
+    </Routes>
+    <Footer />
+  </>
   );
 }
 

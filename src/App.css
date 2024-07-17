@@ -1,23 +1,38 @@
-:root{
-     /* variables light-mode */
+:root {
+  /* variables light-mode */
   --Texto: #fdfdfd; 
-  --Background: #E57147; 
-  --Hover: rgba(71,0,75,1); 
+  --Background: #E57147;
+  --Hover: #47004B; 
   --IconesLinks: #fdfdfd; 
-  --Navbar: #D85C30;
-  --NavFooter: #4F4F4F;
-   
+  --Navbar: #D85C30; 
+  --NavFooter:#4F4F4F ;
+
   color: var(--Texto);
   background-color: var(--Background);
 }
-.section{
+
+.section {
   padding: 5vh 10vw;
   max-height: 700px;
 }
 
-
-.column{
+.column {
   width: 50%;
-  padding: 10px;
 }
 
+.grid-container {
+  display: grid;
+  grid-template-areas: 
+    'area1 area2'
+    'area3 area4';
+  gap: 10px;
+  width: 100%-10vw;
+}
+
+.grid-item {
+  background-color: #E57147; 
+  color: #fdfdfd; 
+  padding: 20px; 
+  border-radius: 5px;
+  border: 1px solid red;
+}

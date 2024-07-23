@@ -13,7 +13,6 @@
 
 .section {
   padding: 5vh 10vw;
-  max-height: 700px;
 }
 
 .column {
@@ -34,4 +33,11 @@
   background-color: #E57147; 
   color: #fdfdfd; 
   border-radius: 5px;
+}
+
+@media (max-width:900px) {
+  h1 {
+    font-size: 2rem!important;
+  }
+
 }

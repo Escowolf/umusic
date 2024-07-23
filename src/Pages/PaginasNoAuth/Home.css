@@ -6,26 +6,27 @@
   display: block;
   font-size: 2.5vw;
   position: static;
-  margin-bottom: 20px;
+  padding: 3%;
 }
 
 .home-waves {
   height: 300px;
-  padding: 20px;
-  margin: 10px 0;
   position: relative;
   display: flex;
   justify-content: space-around;
-  padding: 0px 15vw;
+  padding: 0px 10vw;
   align-items: center;
 }
 
 .wave {
-  width: 3.5vw;
-  height: 22vh;
-  background-color: black;
+  width: 100%;
+  height: 80%;
+  max-width: 100px;
+  max-height: 500px;
+  background-color: var(--IconesLinks);
   border-radius: 50px;
   position: relative;
+  margin: 0% 4%;
 }
 
 .wave:nth-child(1),
@@ -45,9 +46,15 @@
 
 
 @media (max-width:900px) {
-  h1 {
-    font-size: 20px;
-    line-height: 20pt;
+
+  .home-waves{
+    padding:0;
+    justify-content: space-between;
   }
 
+  .wave {
+    width: 100%;
+    height: 50%;
+    margin: 0px 10px;
+  }
 }

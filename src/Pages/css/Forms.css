@@ -1,0 +1,82 @@
+.login-form,
+.cadastro-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 100%;
+  margin: 0 auto;
+  max-width: 40vh;
+  padding: 5%;
+  background-color: var(--Hover);
+}
+
+.logo-form {
+  max-height: 85px;
+}
+
+.form-social {
+  display: flex;
+  justify-content: center;
+}
+
+.form-social .item {
+  border-radius: 50%;
+  border: none;
+  margin: 1vw;
+  font-size: 4vh;
+}
+
+hr {
+  width: 100%;
+  margin-bottom: 10%;
+}
+
+.form-item {
+  width: 90%;
+  height: 38px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  padding: 10px;
+  border: none;
+}
+
+.form-personal {
+  display: flex;
+  justify-content: left;
+  padding-bottom: 15px;
+}
+
+.form-choice {
+  display: block;
+  width: 50%;
+  justify-content: left;
+  text-align: left;
+}
+
+.form-label {
+  padding-bottom: 10px;
+  font-weight: 700;
+}
+
+.form-data {
+  width: 80%;
+  padding: 10px;
+}
+
+.submit-button {
+  width: 95%;
+  height: 48px;
+  border-radius: 5px;
+  font-size: 16px;
+  border: none;
+  color:var(--IconesLinks);
+  background-color: var(--Background);
+  font-weight: 600;
+}
+
+.highlight {
+  color: var(--Background);
+  text-decoration: none;
+}

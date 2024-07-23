@@ -10,23 +10,23 @@ import PlaylistList from "./Pages/componentesLista/PlaylistList";
 import NewPlaylist from "./Pages/PaginasAuth/NewPlaylist";
 import Login from "./Pages/PaginasNoAuth/Login";
 import { useState } from "react";
-import MenuAuth from "./Pages/user/MenuAuth";
+import NavAuth from "./Pages/user/NavAuth";
 import HomeAuth from "./Pages/PaginasAuth/HomeAuth";
 import Profile from "./Pages/user/Profile";
 
 function App() {
   const usuario = JSON.parse(localStorage.getItem('usuarioLogado'));
-  const [login, setLogin] = useState(usuario);
+  const [login] = useState(usuario);
   console.log(login);
   return (<>
-    {!login ? (<Navbar />) : (<MenuAuth />)}
+    {!login ? (<Navbar />) : (<NavAuth />)}
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/faq" element={<Faq />} />
       <Route path="/play" element={<PlaylistList />} />
       <Route path="/playlists/:_id" element={<PlaylistDetail />} />
       <Route path="/newplaylist" element={<NewPlaylist />} />
-      <Route path="/sigin" element={<Cadastro />} />
+      <Route path="/singup" element={<Cadastro />} />
       <Route path="/login" element={<Login />} />
       <Route path="/home" element={<HomeAuth />} />
       <Route path="/perfil" element={<Profile />} />

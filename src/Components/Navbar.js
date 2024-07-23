@@ -10,10 +10,10 @@ function Navbar() {
         <Link to="/" className="logo_name">uMusic</Link>
       </span>
       <div className="nav-links">
-        <Link to="/" className="nav-item" onClick={hideItens}>Início</Link>
-        <Link to="/faq" className="nav-item" onClick={hideItens}>Faq</Link>
-        <Link to="/sigin" className="nav-item" onClick={hideItens}>Cadastro</Link>
-        <Link to="/login" className="nav-item" onClick={hideItens}>Login</Link>
+        <Link to="/" className="nav-item" onClick={hideItens}>Home</Link>
+        <Link to="/faq" className="nav-item" onClick={hideItens}>FAQ</Link>
+        <Link to="/singup" className="nav-item" onClick={hideItens}>Sing up</Link>
+        <Link to="/login" className="nav-log" onClick={hideItens}>Log in<i className="fa-solid fa-right-to-bracket"></i></Link>
       </div>
       <span>
         <Link to="#" className="nav-icon nav-item" onClick={lightModeFunction}>
@@ -31,7 +31,7 @@ function Navbar() {
   //A variável element serve para definir qual elemento será alterado.
   function lightModeFunction() {
     var element = document.documentElement;
-    element.classList.toggle("light-mode");
+    element.classList.toggle("dark-mode");
   }
 
   function showItens() {

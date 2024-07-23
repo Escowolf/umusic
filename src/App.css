@@ -11,6 +11,15 @@
   background-color: var(--Background);
 }
 
+.dark-mode{
+  --Texto: #fdfdfd;  /* Manter o texto claro para contraste em fundo escuro */
+  --Background: #121212;  /* Fundo escuro para criar um tema dark */
+  --Hover: #E57147;  /* Manter a cor de hover clara para destaque */
+  --IconesLinks: #D85C30;  /* Usar a cor de ícones e links clara */
+  --Navbar: #47004B;  /* Manter a cor da navbar escura, mas visível */
+  --NavFooter: #4F4F4F;  
+}
+
 .section {
   padding: 5vh 10vw;
 }

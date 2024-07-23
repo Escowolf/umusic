@@ -2,7 +2,6 @@
     background-color: var(--Navbar);
     background: solid;
     display: flex;
-    flex-wrap: wrap;
     justify-content: space-between;
     padding: 2.5vh 2.5vw;
     align-items: center;
@@ -24,8 +23,8 @@
 
 .nav-log{
     text-decoration: none;
-    color: var(--IconesLinks);
-    background-color: var(--Hover);
+    color: var(--Hover);
+    background-color: var(--IconesLinks);
     padding: 10px;
     border-radius: 30px;
 }
@@ -35,8 +34,8 @@
 }
 
 .nav-item:hover {
-    color: var(--Hover);
-    background-color: var(--Texto);
+    color: var(--Background);
+    background-color: var(--Hover);
     padding: 5px;
 }
 
@@ -68,7 +67,7 @@
         font-size: 20px;
     }
 
-    .nav-icon {
+    .nav-icons {
         display: inline;
     }
 
@@ -77,6 +76,7 @@
     }
 
     .nav-links {
+        color:var(--Background);
         display: none;
         position: absolute;
         top: 50px;

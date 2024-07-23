@@ -15,8 +15,8 @@ function Navbar() {
         <Link to="/singup" className="nav-item" onClick={hideItens}>Sing up</Link>
         <Link to="/login" className="nav-log" onClick={hideItens}>Log in<i className="fa-solid fa-right-to-bracket"></i></Link>
       </div>
-      <span>
-        <Link to="#" className="nav-icon nav-item" onClick={lightModeFunction}>
+      <span className="nav-icons">
+        <Link to="#" className="nav-item" onClick={lightModeFunction}>
           <i id="light-mode" className="fa-regular fa-lightbulb" alt="Toggle light mode" value="1"></i>
         </Link>
 

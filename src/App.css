@@ -1,24 +1,39 @@
 :root {
   /* variables light-mode */
-  --Texto: #fdfdfd; 
-  --Background: #E57147;
-  --Hover: #47004B; 
-  --IconesLinks: #fdfdfd; 
-  --Navbar: #D85C30; 
-  --NavFooter:#4F4F4F ;
+  --Texto: #333333;
+  --Background: #F5F5F5;
+  --Hover: #47004B;
+  --IconesLinks: #E57147;
+  --Navbar: #47004B;
+  --NavFooter: #2A2A2A;
 
   color: var(--Texto);
   background-color: var(--Background);
 }
 
-.dark-mode{
-  --Texto: #fdfdfd;  /* Manter o texto claro para contraste em fundo escuro */
-  --Background: #121212;  /* Fundo escuro para criar um tema dark */
-  --Hover: #E57147;  /* Manter a cor de hover clara para destaque */
-  --IconesLinks: #D85C30;  /* Usar a cor de ícones e links clara */
-  --Navbar: #47004B;  /* Manter a cor da navbar escura, mas visível */
-  --NavFooter: #4F4F4F;  
+.dark-mode {
+  --Texto: #E0E0E0;
+  --Background: #1E1E1E;
+  --Hover: #E57147;
+  --IconesLinks: #D6A0B1;
+  --Navbar: #47004B;
+  --NavFooter: #2A2A2A;
 }
+
+body {
+  margin: 0;
+  font-family:'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
 
 .section {
   padding: 5vh 10vw;
@@ -30,7 +45,7 @@
 
 .grid-container {
   display: grid;
-  grid-template-areas: 
+  grid-template-areas:
     'area1 area2'
     'area3 area4';
   gap: 20px;
@@ -39,14 +54,14 @@
 }
 
 .grid-item {
-  background-color: #E57147; 
-  color: #fdfdfd; 
+  background-color: #E57147;
+  color: #fdfdfd;
   border-radius: 5px;
 }
 
 @media (max-width:900px) {
   h1 {
-    font-size: 2rem!important;
+    font-size: 2rem !important;
   }
 
 }

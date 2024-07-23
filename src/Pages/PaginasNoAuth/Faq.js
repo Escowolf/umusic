@@ -1,23 +1,20 @@
 import '../css/Faq.css';
 
 function Faq() {
-return (
-<>
-<div className="background">
-        <div className="container">
-
+    return (
+        <div className="background">
             <div className="faq">
-            <h1 className="title">Suporte <small className="text-muted">(Frequently Asked Questions)</small></h1>
-            <br />
-            <label htmlFor="search">Como podemos te ajudar?</label>
+                <h1 className="title">Suporte <small className="text-muted">(Frequently Asked Questions)</small></h1>
+                <br />
+                <label htmlFor="search">Como podemos te ajudar?</label>
 
-            <div className="input-group">
-                <input type="text" className="form-control" aria-label="Text input with segmented dropdown button" />
-                <div className="input-group-append">
-                    <button type="button" className="btn btn-outline-secondary">Buscar</button>
+                <div className="input-group">
+                    <input type="text" className="form-control" aria-label="Text input with segmented dropdown button" />
+                    <div className="input-group-append">
+                        <button type="button" className="btn btn-outline-secondary">Buscar</button>
+                    </div>
                 </div>
-            </div>
-            <br />
+                <br />
                 <table className="table">
                     <thead>
                         <tr>
@@ -31,13 +28,11 @@ return (
                             <td><a href="">Gerenciar pagamentos</a></td>
                             <td><a href="">Como entrar</a></td>
                             <td><a href="">Planos disponíveis</a></td>
-
                         </tr>
                         <tr>
                             <td><a href="">Formas de pagamento</a></td>
                             <td><a href="">Ajuda com o perfil</a></td>
                             <td><a href="">Preferências do plano</a></td>
-
                         </tr>
                         <tr>
                             <td><a href="">Ajuda com a cobrança</a></td>
@@ -50,11 +45,9 @@ return (
                         </tr>
                     </tbody>
                 </table>
-            
             </div>
         </div>
-        </div>
-</>);
+    );
 }
 
 export default Faq;

@@ -1,11 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import FalseToken from '../../api/falseToken';
 import axios from 'axios';
 import './PlayUser.css';
 
 function PlayUser() {
-  <FalseToken />;
   const [playlists, setPlaylists] = useState([]);
 
   useEffect(() => {

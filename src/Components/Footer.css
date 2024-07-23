@@ -2,7 +2,7 @@
     position: fixed;
     bottom: 0;
     background-color: var(--NavFooter);
-    width: fill;
+    width: stretch;
     justify-content: center;
     align-items: center;
     text-align: center;

@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.273aa5ae.css",
-    "main.js": "/static/js/main.980be680.js",
+    "main.css": "/static/css/main.c30e5dde.css",
+    "main.js": "/static/js/main.c015b66d.js",
     "static/js/845.552f6770.chunk.js": "/static/js/845.552f6770.chunk.js",
     "static/media/disco.gif": "/static/media/disco.d475033db7db7e7b9e9e.gif",
     "static/media/logoUmus.png": "/static/media/logoUmus.1ce8b900c50b0eb63400.png",
@@ -10,12 +10,12 @@
     "static/media/happy_people.jpg": "/static/media/happy_people.0319a38033bd23ac7212.jpg",
     "static/media/favicon.optimized.svg": "/static/media/favicon.optimized.7d8f0736884021fd132e3f2d2ef24fcc.svg",
     "index.html": "/index.html",
-    "main.273aa5ae.css.map": "/static/css/main.273aa5ae.css.map",
-    "main.980be680.js.map": "/static/js/main.980be680.js.map",
+    "main.c30e5dde.css.map": "/static/css/main.c30e5dde.css.map",
+    "main.c015b66d.js.map": "/static/js/main.c015b66d.js.map",
     "845.552f6770.chunk.js.map": "/static/js/845.552f6770.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.273aa5ae.css",
-    "static/js/main.980be680.js"
+    "static/css/main.c30e5dde.css",
+    "static/js/main.c015b66d.js"
   ]
 }

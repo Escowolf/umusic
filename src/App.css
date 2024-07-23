@@ -25,14 +25,13 @@
   grid-template-areas: 
     'area1 area2'
     'area3 area4';
-  gap: 10px;
-  width: 100%;
+  gap: 20px;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 50%;
 }
 
 .grid-item {
   background-color: #E57147; 
   color: #fdfdfd; 
-  padding: 20px; 
   border-radius: 5px;
-  border: 1px solid red;
 }

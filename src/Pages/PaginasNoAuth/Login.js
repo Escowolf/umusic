@@ -1,11 +1,13 @@
 import { useState } from "react";
 import axios from "axios";
 import logo from '../img/logoUmus.png';
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
+import { useAuth } from '../../contexts/AuthContext'; 
 import '../css/Forms.css';
 
 function Login() {
-    const navigate = useNavigate();
+
+    const { login } = useAuth();
     const [email, setEmail] = useState('');
     const [senha, setSenha] = useState('');
     const [error, setError] = useState('');
@@ -13,26 +15,34 @@ function Login() {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
+        console.log('Submitting login with', { email, senha });
+
         try {
             const { data } = await axios.get(`http://localhost:4000/usuarios?email=${email}`);
+            console.log('API response data:', data);
+
             const usuario = data[0];
 
-            if (!usuario || usuario.senha !== senha) {
-                setError("Dados inválidos!");
+            if (!usuario) {
+                setError("Usuário não encontrado!");
                 return;
             }
 
-            localStorage.setItem('usuarioLogado', JSON.stringify(usuario));
-            navigate("/home");
+            if (usuario.senha !== senha) {
+                setError("Senha incorreta!");
+                return;
+            } else {
+                login(usuario);
+            }
+
         } catch (err) {
-            console.error(err);
+            console.error('API error:', err);
             setError("Ocorreu um erro. Tente novamente.");
         }
     };
 
     return (
         <form onSubmit={handleSubmit} className="login-form">
-
             <img src={logo} className="logo-form" alt="Logo site" />
             <h1>Log in to uMusic</h1>
             <span className="form-social">
@@ -40,7 +50,6 @@ function Login() {
                 <i className="item fa-brands fa-google"></i>
                 <i className="item fa-brands fa-apple"></i>
             </span>
-
             <hr />
             {error && <p className="error-message">{error}</p>}
             <div className="form-inputs">
@@ -68,11 +77,8 @@ function Login() {
                 Não tem cadastro?&nbsp;
                 <Link to="/signup" className="highlight">Inscreva-se!</Link>
             </p>
-
-
         </form>
     );
-
 }
 
 export default Login;

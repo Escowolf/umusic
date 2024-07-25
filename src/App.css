@@ -6,6 +6,9 @@
   --IconesLinks: #E57147;
   --Navbar: #47004B;
   --NavFooter: #2A2A2A;
+  --Transform: #d0d0d0c1;
+  --Shadow: 0 0 0.2em #ffffff, 0 0 0.2em #ded8ff, 0 0 0.2em #747474;
+
 
   color: var(--Texto);
   background-color: var(--Background);
@@ -18,6 +21,8 @@
   --IconesLinks: #D6A0B1;
   --Navbar: #47004B;
   --NavFooter: #2A2A2A;
+  --Transform: #2a2a2ac1;
+  --Shadow: 0 0 0.2em #000000, 0 0 0.2em #8877FF, 0 0 0.2em #100270;
 }
 
 body {

@@ -5,13 +5,16 @@ import AudioPlayer from '../AudioPlayer';
 import './PlaylistDetail.css';
 
 function PlaylistDetail() {
-  const [playlistSelecionada, setPlaylistSelecionada] = useState({ musicas: [] });
+  const [playlistSelecionada, setPlaylistSelecionada] = useState({ musicas: [], nome: 'Nome da Playlist', capa: 'caminho/para/imagem/default.jpg' });
   const { _id } = useParams();
 
   useEffect(() => {
     axios.get(`http://localhost:4000/playlists/${_id}`)
       .then((res) => {
         setPlaylistSelecionada(res.data);
+      })
+      .catch(() => {
+        // Se ocorrer um erro na requisição, os valores padrão serão mantidos
       });
   }, [_id]);
 
@@ -21,11 +24,13 @@ function PlaylistDetail() {
     }
   }, [playlistSelecionada.capa]);
 
-  const musicas = playlistSelecionada.musicas.map((playDados, index) => (
+  const musicas = (playlistSelecionada.musicas && playlistSelecionada.musicas.length > 0) 
+  ? playlistSelecionada.musicas.map((playDados, index) => (
     <div key={index} className="playlist-detail">
       <AudioPlayer src={playDados.arquivo} musicname={playDados.nome} artist={playDados.cantor} />
     </div>
-  ));
+  ))
+  : <p>Não há músicas nesta playlist.</p>;
 
   return (
     <>

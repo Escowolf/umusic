@@ -1,56 +1,58 @@
-/* Estiliza o contêiner do cabeçalho de pesquisa */
-.search-header {
-    margin-top: 4px;
-}
-
-/* Estiliza o grupo de entrada e o botão de pesquisa */
-.input-group {
+/* Contêiner principal da página de criação de playlist */
+.create-playlist-header {
     display: flex;
+    justify-content: center;
     align-items: center;
-    margin-bottom: 1rem;
+    min-height: 100vh;
+    background-color: #f9f9f9; /* Cor de fundo clara para contraste com o formulário */
+    padding: 20px;
 }
 
+/* Estilo para o formulário */
+.create-playlist-header form {
+    background-color: #fff; /* Cor de fundo do formulário */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave para destacar o formulário */
+    max-width: 500px; /* Largura máxima do formulário */
+    width: 100%;
+}
+
+/* Estilo para os campos de entrada */
 .form-control {
-    flex: 1;
-    padding: 0.5rem;
-    border: 1px solid #ced4da;
-    border-radius: 0.25rem;
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 10px; /* Espaçamento entre os campos */
+    border: 1px solid #ddd; /* Borda sutil */
+    border-radius: 4px; /* Bordas arredondadas */
+    box-sizing: border-box; /* Inclui o padding e border no width total */
 }
 
+/* Estilo para o botão de envio */
 .button {
-    background-color: #007bff;
-    color: white;
+    width: 100%;
+    padding: 12px;
+    background-color: #007bff; /* Cor de fundo azul */
+    color: #fff; /* Texto branco */
     border: none;
-    padding: 0.5rem 1rem;
-    border-radius: 0.25rem;
+    border-radius: 4px;
     cursor: pointer;
-    margin-left: 0.5rem;
+    font-size: 16px;
     display: flex;
+    justify-content: center;
     align-items: center;
+    transition: background-color 0.3s ease; /* Transição suave para a cor de fundo */
 }
 
 .button:hover {
-    background-color: #0056b3;
+    background-color: #0056b3; /* Cor de fundo mais escura ao passar o mouse */
 }
 
-.select {
-    padding: 0.5rem;
-    border: 1px solid #ced4da;
-    border-radius: 0.25rem;
-    margin-left: 1rem;
-    margin-right: 1rem;
+.button:focus {
+    outline: none; /* Remove o contorno ao focar */
 }
 
-.new-music-button {
-    background-color: #28a745;
-    color: white;
-    border: none;
-    padding: 0.5rem 1rem;
-    border-radius: 0.25rem;
-    cursor: pointer;
-    float: right;
-}
-
-.new-music-button:hover {
-    background-color: #218838;
+/* Estilo para o ícone do botão */
+.button .fa-plus {
+    margin-right: 8px; /* Espaçamento entre o ícone e o texto */
 }

@@ -1,7 +1,5 @@
-import PlayUser from './PlayUser';
+import PlayUser from './HomeUser';
 import UserExemple from '../img/User.jpg';
-import './HomeAuth.css';
-
 
 function Profile(){
     const usuario = JSON.parse(localStorage.getItem('usuarioLogado'))

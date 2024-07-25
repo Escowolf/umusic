@@ -9,7 +9,7 @@
   margin: 0 auto;
   max-width: 40vh;
   padding: 5%;
-  background-color: var(--Hover);
+  background-color: var(--IconesLinks);
 }
 
 .logo-form {
@@ -26,6 +26,15 @@
   border: none;
   margin: 1vw;
   font-size: 4vh;
+  color:var(--Hover)
+}
+
+.form-social .item:hover {
+  border-radius: 50%;
+  border: none;
+  margin: 1vw;
+  font-size: 4vh;
+  color:var(--Background)
 }
 
 hr {
@@ -71,10 +80,22 @@ hr {
   border-radius: 5px;
   font-size: 16px;
   border: none;
+  color:var(--Background);
+  background-color: var(--Hover);
+  font-weight: 600;
+}
+
+.submit-button:hover {
+  width: 95%;
+  height: 48px;
+  border-radius: 5px;
+  font-size: 16px;
+  border: none;
   color:var(--IconesLinks);
   background-color: var(--Background);
   font-weight: 600;
 }
+
 
 .highlight {
   color: var(--Background);

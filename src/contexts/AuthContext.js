@@ -1,36 +1,60 @@
-import React, { createContext, useContext, useEffect, useState } from 'react';
+import { createContext, useContext, useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom'; 
 
-// Cria o contexto
-const AuthContext = createContext(null);
+const AuthContext = createContext();
 
-// Provedor do contexto
 export function AuthProvider({ children }) {
-    const [usuario, setUsuario] = useState(null);
+    const [isAuthenticated, setIsAuthenticated] = useState(false);
+    const [token, setToken] = useState(null);
+    const navigate = useNavigate();
+
 
     useEffect(() => {
-        const storedUser = JSON.parse(localStorage.getItem('usuarioLogado'));
-        setUsuario(storedUser);
+        const storedToken = localStorage.getItem('token');
+        if (storedToken) {
+            setToken(storedToken);
+            setIsAuthenticated(true);
+        } else {
+            setIsAuthenticated(false);
+        }
     }, []);
 
+    const login = (usuario) => {
+        // Gera um token falso com uma função simples (substitua conforme necessário)
+        const payload = { usuario };
+        const token = btoa(JSON.stringify(payload)); // Gera um token base64 (não seguro)
+
+        setIsAuthenticated(true);
+        setToken(token);
+        console.log(token);
+        localStorage.setItem('token', token);
+        navigate('/home');
+    };
+
+    const logout = () => {
+        setIsAuthenticated(false);
+        setToken(null);
+        localStorage.removeItem('token');
+    };
+
     return (
-        <AuthContext.Provider value={{ usuario }}>
+        <AuthContext.Provider value={{ isAuthenticated, login, logout, token }}>
             {children}
         </AuthContext.Provider>
     );
 }
 
-// Hook para usar o contexto
 export function useAuth() {
     return useContext(AuthContext);
 }
 
 // Função que retorna um componente dependendo do estado do usuário
-export function FalseToken() {
-    const { usuario } = useAuth();
+export function AuthStatus() {
+    const { isAuthenticated } = useAuth();
 
     return (
         <>
-            {usuario ? (
+            {isAuthenticated ? (
                 <p>Usuário está logado</p>
             ) : (
                 <p>Usuário não está logado</p>

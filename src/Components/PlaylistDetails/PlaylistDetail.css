@@ -1,0 +1,65 @@
+.playlist-header {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  position: relative; /* Para posicionamento do pseudo-elemento */
+}
+
+.playlist-header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color:var(--Transform);
+  z-index: 1; 
+}
+
+.playlist-header > * {
+  position: relative;
+  z-index: 2;
+}
+
+.playlist-info-general {
+  height: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.playlist-main-title {
+  margin: 0;
+  color: var(--Texto);
+  max-width: 750px;
+  font-size: 4vw;
+  margin-top: -20px;
+  font-weight: bold;
+}
+
+.playlist-photo {
+  width: 200px;
+  height: 200px;
+  margin: 5%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* Item styles */
+.playlist-detail {
+  height: 100%;
+  margin: 5px;
+  padding: 0px 10px;
+}
+
+.playlist-detail::marker {
+  margin: 0;
+  display: none;
+}
+
+.playlist-information {
+  line-height: 12pt;
+  color: var(--Texto);
+  padding: 0px 5px;
+}

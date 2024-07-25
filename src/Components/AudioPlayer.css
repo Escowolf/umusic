@@ -1,0 +1,62 @@
+.audio-player {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    background-color: var(--NavFooter);
+    padding: 10px;
+    border-radius: 5px;
+    color: white;
+}
+
+.music-info {
+    display: block;
+}
+
+.row {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.audio-player button {
+    margin: 5px;
+    padding: 10px;
+    height: 50px;
+    width: 50px;
+    border: none;
+    background-color: #444;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.audio-player button:hover {
+    background-color: #555;
+}
+
+.progress-container {
+    width: 100%;
+    margin: 10px 0;
+}
+
+.progress-container input[type="range"] {
+    width: 98%;
+
+}
+
+.time {
+    display: flex;
+    font-size: 0.9em;
+}
+
+.playlist-song {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 0;
+}
+
+.playlist-artist {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 0;
+}

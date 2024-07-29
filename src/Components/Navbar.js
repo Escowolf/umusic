@@ -15,7 +15,7 @@ function Navbar() {
 
   const handleLogout = () => {
     logout();
-    navigate('/login');
+    navigate('/');
   };
 
   const toggleDropdown = () => {
@@ -34,25 +34,17 @@ function Navbar() {
   return (
     <header className="nav-container">
       <nav className={`navbar ${isResponsive ? "responsive" : ""}`}>
-        <Link to={isAuthenticated ? "/home" : "/"}>
-          <img src={logo} className="logo" alt="Logo site" />
+        <Link to={isAuthenticated ? "/home" : "/"} className="nav-logo">
+          <img src={logo} className="logo-icon" alt="uMusic"/>
+          <p className="logo-name">uMusic</p>
         </Link>
         <div className="nav-content">
-          <div className="nav-icons">
-            <Link to="#" className="nav-item" onClick={toggleLightMode}>
-              <i id="light-mode" className={`fa-regular fa-lightbulb ${isLightMode ? "active" : ""}`} alt="Toggle light mode"></i>
-            </Link>
-
-            <Link to="#" className="dropbtn nav-icon nav-item" onClick={toggleResponsive}>
-              <i className="fa fa-bars"></i>
-            </Link>
-          </div>
 
           {!isAuthenticated ? (
             <div className="nav-links">
               <Link to="/" className="nav-item" onClick={toggleResponsive}>Home</Link>
               <Link to="/faq" className="nav-item" onClick={toggleResponsive}>FAQ</Link>
-              <Link to="/signup" className="nav-item" onClick={toggleResponsive}>Sign up</Link>
+              <Link to="/signup" className="nav-sign" onClick={toggleResponsive}>Sign up</Link>
               <Link to="/login" className="nav-log" onClick={toggleResponsive}>Log in <i className="fa-solid fa-right-to-bracket"></i></Link>
             </div>
           ) : (
@@ -74,6 +66,16 @@ function Navbar() {
               </div>
             </div>
           )}
+          <div className="nav-icons">
+            <Link to="#" className="nav-item" onClick={toggleLightMode}>
+              <i id="light-mode" className={`fa-regular fa-lightbulb ${isLightMode ? "active" : ""}`} alt="Toggle light mode"></i>
+            </Link>
+
+            <Link to="#" className="dropbtn nav-icon nav-item" onClick={toggleResponsive}>
+              <i className="fa fa-bars"></i>
+            </Link>
+          </div>
+
         </div>
       </nav>
     </header>

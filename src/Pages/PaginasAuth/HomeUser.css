@@ -1,23 +1,18 @@
-/* Main Content */
 .playlist-content {
   text-align: left;
-  padding: 0 20vw;
-  /* Use relative units for better responsiveness */
+  padding: 0 10vw;
 }
 
-/* Title Styles */
 .playlists-title {
   font-size: 2rem;
   margin-bottom: 20px;
 }
 
-/* Link Styles */
 #link {
   text-decoration: none;
   color: inherit;
 }
 
-/* Subtitle Styles */
 .subtitle {
   font-size: 1.5rem;
   color: #007bff;
@@ -25,30 +20,40 @@
   margin: 10px 0;
 }
 
-/* Hover Effects */
 .subtitle:hover {
   text-decoration: underline;
 }
 
-/* Playlist List Styles */
 .playlist-data {
   list-style: none;
-  padding: 0;
   margin: 0;
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-start;
+  justify-content: center;
 }
 
-/* Playlist Item Styles */
 .playlist-item {
   margin: 10px;
-  width: 9.5vw;
-  height: 9.5vw;
+  width: 10.5vw;
+  height: 10.5vw;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: opacity 0.3s ease;
   min-width: 50px;
+  position: relative;
+  overflow: hidden;
+}
+
+.playlist-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #011c38a1;
+  border-radius: 10px;
+  z-index: 1;
 }
 
 .playlist-image {
@@ -69,19 +74,43 @@
   text-decoration: none;
   color: var(--Texto);
   font-weight: 600;
+  margin: 0;
+  padding: 0;
 }
 
 .playlist-title {
   align-self: center;
-  padding: 0px 10px;
-  margin: 0 auto;
-  position: relative;
-  top: -8vh;
-  font-size: 14px;
-  font-weight: 600;
+  margin: 0;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 2;
+  text-shadow: rgba(0, 0, 0, 0.5);
+  padding: 5px;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--Background);
+  box-sizing: border-box;
+  z-index: 10;
+  text-transform: uppercase;
 }
 
-.playlist-title::after {
-  background-color: #007bff;
-  z-index: 1;
+@media (max-width:900px) {
+
+  .playlist-content {
+    text-align: left;
+    padding: 0 10vw;
+  }
+  .playlist-item {
+    min-width: 250px;
+    width: fill;
+    height: 100px;
+    position: relative;
+  }
+
+  .playlist-title {
+    font-size: 16px;
+  }
+
 }

@@ -2,6 +2,8 @@
   "playlists": [
     {
       "id": "1",
+      "userId": 1,
+      "type": "Pública",
       "nome": "A alguns quilômetros de lugar nenhum",
       "capa": "../img/albuns/1.jpg",
       "musicas": [
@@ -273,8 +275,10 @@
   ],
   "usuarios": [
     {
+      "seguindo": 3,
+      "seguidores": 5,
       "email": "es@g.com",
-      "user_photo":"https://www.academia.org.br/sites/default/files/conteudo/a-lideranca-de-machado-de-assis-1.jpg",
+      "user_photo": "https://www.academia.org.br/sites/default/files/conteudo/a-lideranca-de-machado-de-assis-1.jpg",
       "username": "happyUser",
       "senha": "123456",
       "data": "2022-05-04",

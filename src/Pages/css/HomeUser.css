@@ -1,59 +1,94 @@
-.playlist-content {
+.home-container {
+  position: relative;
+  padding: 3vw;
+  margin: 0;
+  height: 20vh;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+  top: 0;
+}
+
+.home-content {
   text-align: left;
-  padding: 0 10vw;
 }
 
-.playlists-title {
-  font-size: 2rem;
-  margin-bottom: 20px;
+.data-user {
+  display: flex;
+  align-items: center;
 }
 
-#link {
-  text-decoration: none;
-  color: inherit;
+.home-photo {
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 100px;
+  padding: 20px;
 }
 
-.subtitle {
-  font-size: 1.5rem;
-  color: #007bff;
-  cursor: pointer;
-  margin: 10px 0;
+.home-name {
+  font-size: 2.5vw;
+  margin: 0;
+  padding: 0;
+  color: var(--IconesLinks);
 }
 
-.subtitle:hover {
-  text-decoration: underline;
+/* PLAYLISTS */
+
+.playlist-section {
+  padding: 20px;
+  height: fit-content;
 }
 
 .playlist-data {
   list-style: none;
-  margin: 0;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  box-sizing: border-box;
 }
 
+.btn-new {
+  background-color: var(--Texto);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+}
+
+.btn-new .fa-solid {
+  font-size: 6vw;
+  color: var(--Background);
+}
+
+
 .playlist-item {
-  margin: 10px;
-  width: 10.5vw;
-  height: 10.5vw;
+  min-height: 300px;
+  min-width: 250px;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: opacity 0.3s ease;
-  min-width: 50px;
   position: relative;
-  overflow: hidden;
+  margin: 10px;
 }
 
-.playlist-item::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #011c38a1;
-  border-radius: 10px;
-  z-index: 1;
+.playlist-link {
+  text-decoration: none;
+  color: var(--Texto);
+  font-weight: 600;
+  margin: 0;
+}
+
+.playlist-data::-webkit-scrollbar {
+  display: none;
+}
+
+/* Para esconder as barras de rolagem em navegadores baseados em Firefox */
+.playlist-data {
+  scrollbar-width: none;
 }
 
 .playlist-image {
@@ -66,35 +101,21 @@
   position: relative;
 }
 
+.btn-new{
+  min-height: 250px;
+  min-width: 250px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: opacity 0.3s ease;
+  position: relative;
+  margin: 10px;
+}
+
 .playlist-item:hover {
   opacity: 0.8;
 }
 
-.playlist-link {
-  text-decoration: none;
-  color: var(--Texto);
-  font-weight: 600;
-  margin: 0;
-  padding: 0;
-}
 
-.playlist-title {
-  align-self: center;
-  margin: 0;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  z-index: 2;
-  text-shadow: rgba(0, 0, 0, 0.5);
-  padding: 5px;
-  font-size: 1rem;
-  font-weight: 700;
-  color: var(--Background);
-  box-sizing: border-box;
-  z-index: 10;
-  text-transform: uppercase;
-}
 
 @media (max-width:900px) {
 
@@ -102,6 +123,7 @@
     text-align: left;
     padding: 0 10vw;
   }
+
   .playlist-item {
     min-width: 250px;
     width: stretch;
@@ -110,7 +132,11 @@
   }
 
   .playlist-title {
-    font-size: 16px;
+    font-size: 12pt;
+  }
+
+  .type{
+    font-size: 10pt;
   }
 
 }

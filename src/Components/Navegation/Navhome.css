@@ -1,0 +1,24 @@
+.home-menu {
+    position: absolute;
+    bottom: 0;
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu-item {
+    text-decoration: none;
+    color: var(--Texto);
+    font-size: 12pt;
+    font-weight: 500;
+    padding-bottom: 15px;
+    background-color: none;
+    border: none;
+}
+
+.menu-item:hover {
+    padding-bottom: 13px;
+    border-bottom:2px solid var(--Hover);;
+    color: var(--Hover);
+}

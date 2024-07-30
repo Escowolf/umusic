@@ -6,6 +6,7 @@ const AuthContext = createContext();
 export function AuthProvider({ children }) {
     const [isAuthenticated, setIsAuthenticated] = useState(false);
     const [token, setToken] = useState(null);
+    const [currentMusic, setCurrentMusic] = useState(null);
     const navigate = useNavigate();
 
 
@@ -20,7 +21,7 @@ export function AuthProvider({ children }) {
     }, []);
 
     const login = (usuario) => {
-        // Gera um token falso com uma função simples (substitua conforme necessário)
+        // Gera um token falso com uma função simples 
         const payload = { usuario };
         const token = btoa(JSON.stringify(payload)); // Gera um token base64 (não seguro)
 
@@ -38,7 +39,7 @@ export function AuthProvider({ children }) {
     };
 
     return (
-        <AuthContext.Provider value={{ isAuthenticated, login, logout, token }}>
+        <AuthContext.Provider value={{ isAuthenticated, login, logout, token, currentMusic, setCurrentMusic }}>
             {children}
         </AuthContext.Provider>
     );

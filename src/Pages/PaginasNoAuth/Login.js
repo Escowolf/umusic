@@ -14,13 +14,8 @@ function Login() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-
-        console.log('Submitting login with', { email, senha });
-
         try {
             const { data } = await axios.get(`http://localhost:4000/usuarios?email=${email}`);
-            console.log('API response data:', data);
-
             const usuario = data[0];
 
             if (!usuario) {

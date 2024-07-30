@@ -1,17 +1,31 @@
 :root {
   /* variables light-mode */
+
   --Texto: #333333;
+  --TextoSecundario: #F5F5F5;
+  --Sidebar: #2A2A2A;
   --Background: #F5F5F5;
   --Hover: #E57147;
   --IconesLinks: #5D1A4A;
   --Navbar: #E57147;
-  --NavFooter: #2A2A2A;
+  --Footer: #2A2A2A;
+
+  /* --Texto: #333333;
+  --Background: #F5F5F5;
+  --Hover: #E57147;
+  --IconesLinks: #5D1A4A;
+  --Navbar: #E57147;
+  --NavFooter: #2A2A2A; */
   --Transform: #d0d0d0c1;
   --Shadow: 0 0 0.2em #ffffff, 0 0 0.2em #ded8ff, 0 0 0.2em #747474;
 
 
   color: var(--Texto);
   background-color: var(--Background);
+}
+
+.special-text {
+  color: var(--TextoSecundario);
 }
 
 .dark-mode {

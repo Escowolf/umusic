@@ -13,19 +13,21 @@ import PrivateRoute from '../Components/PrivateRoute';
 import { useAuth } from '../contexts/AuthContext';
 
 function RoutesConfig() {
-  const { isAuthenticated } = useAuth();
+  const { isAuthenticated, currentUser } = useAuth();
 
   // Retorna Loading enquanto verifica se a autenticação está sendo processada
   if (isAuthenticated === undefined) {
     return <div>Loading...</div>;
   }
+  console.log(currentUser);
+  console.log(isAuthenticated);
 
   return (
     <Routes>
       <Route path="/faq" element={<Faq />} />
-      <Route path="/login" element={!isAuthenticated ? <Login /> : <Navigate to="/home" />} />
-      <Route path="/signup" element={!isAuthenticated ? <Cadastro /> : <Navigate to="/home" />} />
-      <Route path="/" element={!isAuthenticated ? <Home /> : <Navigate to="/home" />} />
+      <Route path="/login" element={!isAuthenticated && !currentUser ? <Login /> : <Navigate to="/home" />} />
+      <Route path="/signup" element={!isAuthenticated && !currentUser ?  <Cadastro /> : <Navigate to="/home" />} />
+      <Route path="/" element={!isAuthenticated && !currentUser ?  <Home /> : <Navigate to="/home" />} />
 
       {/* Rotas privadas */}
       <Route path="/playlists/:_id" element={<PrivateRoute element={PlaylistDetail} />} />

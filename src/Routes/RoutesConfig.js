@@ -9,7 +9,7 @@ import CreatePlaylist from '../Pages/PaginasAuth/CreatePlaylist';
 import HomeUser from '../Pages/PaginasAuth/HomeUser';
 import Profile from '../Pages/PaginasAuth/Profile';
 import NewPlaylist from '../Components/PlaylistDetails/NewPlaylist';
-import PrivateRoute from '../Components/PrivateRoute';
+import PrivateRoute from './PrivateRoute';
 import { useAuth } from '../contexts/AuthContext';
 
 function RoutesConfig() {

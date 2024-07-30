@@ -1,7 +1,11 @@
 /* Estilos gerais de navegação */
 .nav-container {
     background-color: var(--Navbar);
-    padding: 0 4vw;
+    padding: 0 ;
+    width: 100%;
+    position: fixed;
+    top:0;
+    z-index:1;
 }
 
 .navbar {
@@ -90,8 +94,7 @@
     padding-bottom: 5px;
 } */
 
-/* Estilos específicos para dispositivos menores */
-@media (max-width: 992px) {
+@media (max-width:900px) {
     .nav-container {
         justify-content: space-between;
     }
@@ -115,7 +118,6 @@
         box-shadow: 0 8px 16px rgba(0, 0, 0, 0.678);
         flex-direction: column;
         width: 150px;
-        z-index: 10;
     }
 
     .nav-links .nav-link {
@@ -152,8 +154,6 @@
     border-radius: 5px;
     border: 1px solid var(--IconesLinks);
 }
-
-
 
 .dropdown-toggle>p {
     padding: 0 5px;

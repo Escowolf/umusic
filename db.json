@@ -274,6 +274,8 @@
   "usuarios": [
     {
       "email": "es@g.com",
+      "user_photo":"https://www.academia.org.br/sites/default/files/conteudo/a-lideranca-de-machado-de-assis-1.jpg",
+      "username": "happyUser",
       "senha": "123456",
       "data": "2022-05-04",
       "nome": "ezequielss",

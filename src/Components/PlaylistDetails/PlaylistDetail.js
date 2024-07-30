@@ -1,12 +1,18 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import AudioPlayer from '../AudioPlayer';
+import { useAuth } from '../../contexts/AuthContext'
 import './PlaylistDetail.css';
 
 function PlaylistDetail() {
-  const [playlistSelecionada, setPlaylistSelecionada] = useState({ musicas: [], nome: 'Nome da Playlist', capa: 'caminho/para/imagem/default.jpg' });
+  const [playlistSelecionada, setPlaylistSelecionada] = useState({
+    musicas: [],
+    nome: 'Nome da Playlist',
+    capa: 'caminho/para/imagem/default.jpg'
+  });
   const { _id } = useParams();
+  const { currentMusic, setCurrentMusic } = useAuth();
 
   useEffect(() => {
     axios.get(`http://localhost:4000/playlists/${_id}`)
@@ -24,26 +30,32 @@ function PlaylistDetail() {
     }
   }, [playlistSelecionada.capa]);
 
-  const musicas = (playlistSelecionada.musicas && playlistSelecionada.musicas.length > 0) 
-  ? playlistSelecionada.musicas.map((playDados, index) => (
-    <div key={index} className="playlist-detail">
-      <AudioPlayer src={playDados.arquivo} musicname={playDados.nome} artist={playDados.cantor} />
-    </div>
-  ))
-  : <p>Não há músicas nesta playlist.</p>;
+  const handleSongClick = (song) => {
+    setCurrentMusic(song);
+  };
+
+  const musicas = playlistSelecionada.musicas.length > 0
+    ? playlistSelecionada.musicas.map((song, index) => (
+      <div key={index} onClick={() => handleSongClick(song)} className="song-item">
+        <p>{song.nome}</p>
+        <p>{song.cantor}</p>
+      </div>
+    ))
+    : <p>Não há músicas nesta playlist.</p>;
 
   return (
     <>
       <div id="playlist-header" className="playlist-header">
         <div className="playlist-info-general">
           <img className="playlist-photo" src={playlistSelecionada.capa} alt="Capa do álbum" />
-          <p className="playlist-main-title"> {playlistSelecionada.nome} </p>
+          <p className="playlist-main-title">{playlistSelecionada.nome}</p>
         </div>
       </div>
       <div className="playlist-content">
         <ul>
           {musicas}
         </ul>
+        {currentMusic && <AudioPlayer {...currentMusic} />}
       </div>
     </>
   );

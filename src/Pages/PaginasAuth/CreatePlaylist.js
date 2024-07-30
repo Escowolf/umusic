@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './CreatePlaylist.css'; // Ajuste o CSS conforme necessário
+import '../css/CreatePlaylist.css'; 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import { useNavigate } from 'react-router-dom';

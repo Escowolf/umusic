@@ -1,7 +1,7 @@
 .footer {
     position: fixed;
     bottom: 0;
-    background-color: var(--NavFooter);
+    background-color: var(--Footer);
     width: stretch;
     justify-content: center;
     align-items: center;

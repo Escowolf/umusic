@@ -1,6 +1,6 @@
 import React from 'react';
-import Navbar from './Components/Navbar';
-import Footer from './Components/Footer';
+import Navbar from './Components/Navegation/Navbar';
+import Footer from './Components/Navegation/Footer';
 import RoutesConfig from './Routes/RoutesConfig';
 import { AuthProvider, useAuth} from './contexts/AuthContext';
 import './App.css';

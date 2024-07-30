@@ -1,6 +1,6 @@
 :root {
   /* variables light-mode */
-
+  min-width: 250px;
   --Texto: #333333;
   --TextoSecundario: #F5F5F5;
   --Sidebar: #2A2A2A;

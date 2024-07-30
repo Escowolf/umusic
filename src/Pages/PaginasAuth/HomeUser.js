@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
-import './HomeUser.css';
+import '../css/HomeUser.css';
 
 function HomeUser() {
   const [playlists, setPlaylists] = useState([]);
@@ -29,7 +29,7 @@ function HomeUser() {
               />
               <p className="playlist-title">{playDados.nome}</p>
             </Link>
-          
+
           </li>
         ))}
       </ul>

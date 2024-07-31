@@ -1,0 +1,142 @@
+.home-container {
+    position: relative;
+    padding: 3vw;
+    margin: 0;
+    height: 20vh;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+    top: 0;
+  }
+  
+  .home-content {
+    text-align: left;
+  }
+  
+  .data-user {
+    display: flex;
+    align-items: center;
+  }
+  
+  .home-photo {
+    width: 160px;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 100px;
+    padding: 20px;
+  }
+  
+  .home-name {
+    font-size: 2.5vw;
+    margin: 0;
+    padding: 0;
+    color: var(--IconesLinks);
+  }
+  
+  /* PLAYLISTS */
+  
+  .playlist-section {
+    padding: 20px;
+    height: fit-content;
+  }
+  
+  .playlist-data {
+    list-style: none;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: nowrap;
+    overflow: auto;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .btn-new {
+    background-color: var(--Texto);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+  }
+  
+  .btn-new .fa-solid {
+    font-size: 6vw;
+    color: var(--Background);
+  }
+  
+  
+  .playlist-item {
+    min-height: 300px;
+    min-width: 250px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: opacity 0.3s ease;
+    position: relative;
+    margin: 10px;
+  }
+  
+  .playlist-link {
+    text-decoration: none;
+    color: var(--Texto);
+    font-weight: 600;
+    margin: 0;
+  }
+  
+  .playlist-data::-webkit-scrollbar {
+    display: none;
+  }
+  
+  /* Para esconder as barras de rolagem em navegadores baseados em Firefox */
+  .playlist-data {
+    scrollbar-width: none;
+  }
+  
+  .playlist-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: opacity 0.3s ease;
+    position: relative;
+  }
+  
+  .btn-new {
+    min-height: 250px;
+    min-width: 250px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: opacity 0.3s ease;
+    position: relative;
+    margin: 10px;
+  }
+  
+  .playlist-item:hover {
+    opacity: 0.8;
+  }
+  
+  
+  
+  @media (max-width:900px) {
+  
+    .playlist-content {
+      text-align: left;
+      padding: 0 10vw;
+    }
+  
+    .playlist-item {
+      min-width: 250px;
+      width: stretch;
+      height: 100px;
+      position: relative;
+    }
+  
+    .playlist-title {
+      font-size: 12pt;
+    }
+  
+    .type {
+      font-size: 10pt;
+    }
+  
+  }

@@ -59,9 +59,7 @@ code {
 }
 
 .main-content {
-  margin-left: 0px;
   margin-top: 95px;
-  padding: 0px;
   flex: 1;
 }
 
@@ -94,7 +92,9 @@ code {
     font-size: 2rem !important;
   }
 
-  .main-content {
+  .main-content, .with-sidebar {
+    margin-left:0px;
+    margin-right: 0px;
     padding: 0px;
     flex: 1;
   }

@@ -1,8 +1,8 @@
-import React, { useEffect, useState, useContext } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import AudioPlayer from '../AudioPlayer';
-import { useAuth } from '../../contexts/AuthContext'
+import { useAuth } from '../../contexts/AuthContext';
 import './PlaylistDetail.css';
 
 function PlaylistDetail() {
@@ -47,8 +47,8 @@ function PlaylistDetail() {
     <>
       <div id="playlist-header" className="playlist-header">
         <div className="playlist-info-general">
-          <img className="playlist-photo" src={playlistSelecionada.capa} alt="Capa do álbum" />
-          <p className="playlist-main-title">{playlistSelecionada.nome}</p>
+          <img className="playlist-photo" src={playlistSelecionada.cover} alt="Capa do álbum" />
+          <p className="playlist-main-title">{playlistSelecionada.name}</p>
         </div>
       </div>
       <div className="playlist-content">

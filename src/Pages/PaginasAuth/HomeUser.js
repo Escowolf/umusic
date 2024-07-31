@@ -1,20 +1,12 @@
-import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
 import { useAuth } from '../../contexts/AuthContext';
-import axios from 'axios';
 import '../css/HomeUser.css';
 import Navhome from '../../Components/Navegation/Navhome';
+import PlaylistsComponent from '../../Components/HomeComponents/PlaylistsComponent';
 
 function HomeUser() {
-  const [playlists, setPlaylists] = useState([]);
   const { currentUser } = useAuth();
   const [section, setSection] = useState('playlists');
-
-  useEffect(() => {
-    axios
-      .get("http://localhost:4000/playlists")
-      .then((res) => setPlaylists(res.data));
-  }, []);
 
   const renderSection = () => {
     switch (section) {
@@ -24,24 +16,7 @@ function HomeUser() {
         return <div>Mais Queridas Content</div>;
       case 'playlists':
         return (
-          <div className='playlist-section'>
-            <ul className="playlist-data">
-              <Link to={'/newplaylist'} className='btn-new' ><i className='fa-solid fa-plus' /></Link>
-              {playlists.map((playDados) => (
-                <li key={playDados.id} className="playlist-item">
-                  <Link to={`/playlists/${playDados.id}`} className='playlist-link'>
-                    <img
-                      className="playlist-image"
-                      src={playDados.capa}
-                      alt="Capa do álbum"
-                    />
-                  </Link>
-                  <p className="playlist-title">{playDados.nome}</p>
-                  <p className="type">{playDados.type}</p>
-                </li>
-              ))}
-            </ul>
-          </div>
+          <PlaylistsComponent />
         );
       case 'albuns':
         return <div>Álbuns Content</div>;

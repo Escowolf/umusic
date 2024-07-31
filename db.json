@@ -1,511 +1,704 @@
 {
-  "playlists": [
+  "usuarios": [
     {
       "id": "1",
-      "userId": 1,
-      "type": "Pública",
-      "nome": "A alguns quilômetros de lugar nenhum",
-      "capa": "../img/albuns/1.jpg",
-      "musicas": [
-        {
-          "id": 1,
-          "nome": "Lost In The City",
-          "cantor": "HoliznaCC0",
-          "arquivo": "/music/HoliznaCC0-HowCanThingsBe.mp3"
-        },
-        {
-          "id": 2,
-          "nome": "Sensual Folk",
-          "cantor": "Scott Holmes Music",
-          "arquivo": "/music/HoliznaCC0 - Lost In The City.mp3"
-        },
-        {
-          "id": 3,
-          "nome": "January-June-and-December",
-          "cantor": "Ketsa",
-          "arquivo": "/music/Ketsa - January-June-and-December.mp3"
-        },
-        {
-          "id": 4,
-          "nome": "How Can Things Be",
-          "cantor": "HoliznaCC0",
-          "arquivo": "/music/Scott Holmes Music - Sensual Folk.mp3"
-        }
+      "nome": "ezequielss",
+      "email": "es@g.com",
+      "senha": "123456",
+      "data": "2022-05-04",
+      "user_photo": "https://www.academia.org.br/sites/default/files/conteudo/a-lideranca-de-machado-de-assis-1.jpg",
+      "seguindo": 3,
+      "seguidores": 5,
+      "playlists": [
+        "1",
+        "6",
+        "8"
       ]
     },
     {
       "id": "2",
-      "nome": "Bom dia, flor do dia",
-      "capa": "../img/albuns/2.jpg",
-      "musicas": [
-        {
-          "id": 1,
-          "nome": "Morning Coffee",
-          "cantor": "HoliznaCC0",
-          "arquivo": "/music/BomDiaFlorDoDia/HoliznaCC0 - Morning Coffee.mp3"
-        },
-        {
-          "id": 2,
-          "nome": "No-Clouds",
-          "cantor": "Ketsa",
-          "arquivo": "/music/BomDiaFlorDoDia/Ketsa - No-Clouds.mp3"
-        },
-        {
-          "id": 3,
-          "nome": "7AM",
-          "cantor": "Ketsa",
-          "arquivo": "/music/BomDiaFlorDoDia/Ketsa - 7AM.mp3"
-        },
-        {
-          "id": 4,
-          "nome": "On That Day",
-          "cantor": "Ketsa",
-          "arquivo": "/music/BomDiaFlorDoDia/Ketsa - On That Day.mp3"
-        }
+      "nome": "Ezequiel Sousa",
+      "email": "teste@g.com",
+      "senha": "123456",
+      "data": "1995-04-17",
+      "user_photo": null,
+      "seguindo": 0,
+      "seguidores": 0,
+      "playlists": [
+        "2",
+        "7"
       ]
     },
     {
       "id": "3",
-      "nome": "That's a rap!",
-      "capa": "../img/albuns/3.jpg",
-      "musicas": [
-        {
-          "id": 1,
-          "nome": "Ye",
-          "cantor": "Double-F The King",
-          "arquivo": "/music/ThatsARap/Double-F the King - Ye.mp3"
-        },
-        {
-          "id": 2,
-          "nome": "WitchCraft",
-          "cantor": "HoliznaCC0",
-          "arquivo": "/music/ThatsARap/HoliznaCC0 - WitchCraft.mp3"
-        },
-        {
-          "id": 3,
-          "nome": "darbar larfves",
-          "cantor": "Yellow Omm",
-          "arquivo": "/music/ThatsARap/HoliznaRAPS - PTSD.mp3"
-        },
-        {
-          "id": 4,
-          "nome": "PTSD",
-          "cantor": "HoliznaRAPS",
-          "arquivo": "/music/ThatsARap/Yellow Omm - darbar larfves.mp3"
-        }
+      "nome": "Ezequiel",
+      "email": "teste@g.com",
+      "senha": "123456",
+      "data": "2022-05-02",
+      "user_photo": null,
+      "seguindo": 0,
+      "seguidores": 0,
+      "playlists": [
+        "3",
+        "5"
       ]
     },
     {
       "id": "4",
-      "nome": "Festinha de quintal",
-      "capa": "../img/albuns/4.jpeg",
-      "musicas": [
-        {
-          "id": 1,
-          "nome": "Good Life ft. Macflowz",
-          "cantor": "Double-F The King",
-          "arquivo": "/music/FESTINHA DE QUINTAL/Double-F the King - Good Life Ft. Macflowz.mp3"
-        },
-        {
-          "id": 2,
-          "nome": "Beautiful",
-          "cantor": "Ketsa",
-          "arquivo": "/music/FESTINHA DE QUINTAL/Ketsa - Beautiful.mp3"
-        },
-        {
-          "id": 3,
-          "nome": "420",
-          "cantor": "Ketsa",
-          "arquivo": "/music/FESTINHA DE QUINTAL/Ketsa - 420.mp3"
-        },
-        {
-          "id": 4,
-          "nome": "Endless Sunny Afternoon",
-          "cantor": "Lobo Loco",
-          "arquivo": "/music/FESTINHA DE QUINTAL/Lobo Loco - Endless Sunny Afternoon (ID 1684) (1).mp3"
-        }
+      "nome": "Ezequiels",
+      "email": "teste@g.com",
+      "senha": "123456",
+      "data": "2022-05-02",
+      "user_photo": null,
+      "seguindo": 0,
+      "seguidores": 0,
+      "playlists": [
+        "4",
+        "6"
       ]
     },
     {
       "id": "5",
-      "nome": "Chilling",
-      "capa": "../img/albuns/5.jpeg",
-      "musicas": [
-        {
-          "id": 1,
-          "nome": "Music Got Me High",
-          "cantor": "Double-F The King",
-          "arquivo": "/music/CHILLING/Double-F the King - Music Got Me High.mp3"
-        },
-        {
-          "id": 2,
-          "nome": "Good Kids",
-          "cantor": "HoliznaRAPS",
-          "arquivo": "/music/CHILLING/HoliznaRAPS - Good Kids.mp3"
-        },
-        {
-          "id": 3,
-          "nome": "Counting Sheep",
-          "cantor": "Baners",
-          "arquivo": "/music/CHILLING/Baners - Counting Sheep.mp3"
-        },
-        {
-          "id": 4,
-          "nome": "April Showers",
-          "cantor": "HoliznaCC0",
-          "arquivo": "/music/CHILLING/HoliznaCC0 - April Showers.mp3"
-        }
+      "nome": "Ezequiels",
+      "email": "teste@g.com",
+      "senha": "123456",
+      "data": "2022-05-24",
+      "user_photo": null,
+      "seguindo": 0,
+      "seguidores": 0,
+      "playlists": [
+        5,
+        8
       ]
+    }
+  ],
+  "albuns": [
+    {
+      "id": "1",
+      "nome": "Album 1",
+      "imagem": "https://via.placeholder.com/150",
+      "ano": 2023,
+      "quantidade_musicas": 1,
+      "duracao_total": "3:00"
+    },
+    {
+      "id": "2",
+      "nome": "Album 2",
+      "imagem": "https://via.placeholder.com/150",
+      "ano": 2023,
+      "quantidade_musicas": 1,
+      "duracao_total": "3:00"
+    },
+    {
+      "id": "3",
+      "nome": "Album 3",
+      "imagem": "https://via.placeholder.com/150",
+      "ano": 2023,
+      "quantidade_musicas": 1,
+      "duracao_total": "3:00"
+    },
+    {
+      "id": "4",
+      "nome": "Album 4",
+      "imagem": "https://via.placeholder.com/150",
+      "ano": 2023,
+      "quantidade_musicas": 1,
+      "duracao_total": "3:00"
+    },
+    {
+      "id": "5",
+      "nome": "Album 5",
+      "imagem": "https://via.placeholder.com/150",
+      "ano": 2023,
+      "quantidade_musicas": 1,
+      "duracao_total": "3:00"
     },
     {
       "id": "6",
-      "nome": "Para ouvir com The Mozão",
-      "capa": "../img/albuns/6.jpeg",
-      "musicas": [
-        {
-          "id": 1,
-          "nome": "Bonnie and Clyde",
-          "cantor": "Double-F The King",
-          "arquivo": "/music/PARA OUVIR COM THE MOZAO/Double-F the King - Bonnie and Clyde.mp3"
-        },
-        {
-          "id": 2,
-          "nome": "Step By Step",
-          "cantor": "Baners",
-          "arquivo": "/music/PARA OUVIR COM THE MOZAO/Baners - Step By Step.mp3"
-        },
-        {
-          "id": 3,
-          "nome": "Guesses",
-          "cantor": "Ketsa",
-          "arquivo": "/music/PARA OUVIR COM THE MOZAO/Ketsa - Guesses.mp3"
-        },
-        {
-          "id": 4,
-          "nome": "Desire",
-          "cantor": "Ketsa",
-          "arquivo": "/music/PARA OUVIR COM THE MOZAO/Ketsa - Desire.mp3"
-        }
-      ]
+      "nome": "Album 6",
+      "imagem": "https://via.placeholder.com/150",
+      "ano": 2023,
+      "quantidade_musicas": 1,
+      "duracao_total": "3:00"
     },
     {
       "id": "7",
-      "nome": "Sunny",
-      "capa": "../img/albuns/7.jpeg",
-      "musicas": [
-        {
-          "id": 1,
-          "nome": "From-Pillar-To-Post",
-          "cantor": "Ketsa",
-          "arquivo": "/music/SUNNY/Ketsa - From-Pillar-To-Post.mp3"
-        },
-        {
-          "id": 2,
-          "nome": "Stealing Glimpses Of Your Face",
-          "cantor": "HoliznaCC0",
-          "arquivo": "/music/SUNNY/HoliznaCC0 - Stealing Glimpses Of Your Face.mp3"
-        },
-        {
-          "id": 3,
-          "nome": "Overstand",
-          "cantor": "Ketsa",
-          "arquivo": "/music/SUNNY/Ketsa - Overstand.mp3"
-        },
-        {
-          "id": 4,
-          "nome": "We Are One",
-          "cantor": "Scott Holmes Music",
-          "arquivo": "/music/SUNNY/Scott Holmes Music - We Are One.mp3"
-        }
-      ]
+      "nome": "Album 7",
+      "imagem": "https://via.placeholder.com/150",
+      "ano": 2023,
+      "quantidade_musicas": 1,
+      "duracao_total": "3:00"
     },
     {
       "id": "8",
-      "nome": "Boss Beat",
-      "capa": "../img/albuns/8.jpeg",
+      "nome": "Album 8",
+      "imagem": "https://via.placeholder.com/150",
+      "ano": 2023,
+      "quantidade_musicas": 1,
+      "duracao_total": "3:00"
+    },
+    {
+      "id": "9",
+      "nome": "Album 9",
+      "imagem": "https://via.placeholder.com/150",
+      "ano": 2023,
+      "quantidade_musicas": 1,
+      "duracao_total": "3:00"
+    },
+    {
+      "id": "10",
+      "nome": "Album 10",
+      "imagem": "https://via.placeholder.com/150",
+      "ano": 2023,
+      "quantidade_musicas": 1,
+      "duracao_total": "3:00"
+    },
+    {
+      "id": "11",
+      "nome": "Album 11",
+      "imagem": "https://via.placeholder.com/150",
+      "ano": 2023,
+      "quantidade_musicas": 1,
+      "duracao_total": "3:00"
+    },
+    {
+      "id": "12",
+      "nome": "Album 12",
+      "imagem": "https://via.placeholder.com/150",
+      "ano": 2023,
+      "quantidade_musicas": 1,
+      "duracao_total": "3:00"
+    },
+    {
+      "id": "13",
+      "nome": "Album 13",
+      "imagem": "https://via.placeholder.com/150",
+      "ano": 2023,
+      "quantidade_musicas": 1,
+      "duracao_total": "3:00"
+    },
+    {
+      "id": "14",
+      "nome": "Album 14",
+      "imagem": "https://via.placeholder.com/150",
+      "ano": 2023,
+      "quantidade_musicas": 1,
+      "duracao_total": "3:00"
+    },
+    {
+      "id": "15",
+      "nome": "Album 15",
+      "imagem": "https://via.placeholder.com/150",
+      "ano": 2023,
+      "quantidade_musicas": 1,
+      "duracao_total": "3:00"
+    },
+    {
+      "id": "16",
+      "nome": "Album 16",
+      "imagem": "https://via.placeholder.com/150",
+      "ano": 2023,
+      "quantidade_musicas": 1,
+      "duracao_total": "3:00"
+    },
+    {
+      "id": "17",
+      "nome": "Album 17",
+      "imagem": "https://via.placeholder.com/150",
+      "ano": 2023,
+      "quantidade_musicas": 1,
+      "duracao_total": "3:00"
+    },
+    {
+      "id": "18",
+      "nome": "Album 18",
+      "imagem": "https://via.placeholder.com/150",
+      "ano": 2023,
+      "quantidade_musicas": 1,
+      "duracao_total": "3:00"
+    },
+    {
+      "id": "19",
+      "nome": "Album 19",
+      "imagem": "https://via.placeholder.com/150",
+      "ano": 2023,
+      "quantidade_musicas": 1,
+      "duracao_total": "3:00"
+    },
+    {
+      "id": "20",
+      "nome": "Album 20",
+      "imagem": "https://via.placeholder.com/150",
+      "ano": 2023,
+      "quantidade_musicas": 1,
+      "duracao_total": "3:00"
+    },
+    {
+      "id": "21",
+      "nome": "Album 21",
+      "imagem": "https://via.placeholder.com/150",
+      "ano": 2023,
+      "quantidade_musicas": 1,
+      "duracao_total": "3:00"
+    },
+    {
+      "id": "22",
+      "nome": "Album 22",
+      "imagem": "https://via.placeholder.com/150",
+      "ano": 2023,
+      "quantidade_musicas": 1,
+      "duracao_total": "3:00"
+    },
+    {
+      "id": "23",
+      "nome": "Album 23",
+      "imagem": "https://via.placeholder.com/150",
+      "ano": 2023,
+      "quantidade_musicas": 1,
+      "duracao_total": "3:00"
+    },
+    {
+      "id": "24",
+      "nome": "Album 24",
+      "imagem": "https://via.placeholder.com/150",
+      "ano": 2023,
+      "quantidade_musicas": 1,
+      "duracao_total": "3:00"
+    },
+    {
+      "id": "25",
+      "nome": "Album 25",
+      "imagem": "https://via.placeholder.com/150",
+      "ano": 2023,
+      "quantidade_musicas": 1,
+      "duracao_total": "3:00"
+    },
+    {
+      "id": "26",
+      "nome": "Album 26",
+      "imagem": "https://via.placeholder.com/150",
+      "ano": 2023,
+      "quantidade_musicas": 1,
+      "duracao_total": "3:00"
+    },
+    {
+      "id": "27",
+      "nome": "Album 27",
+      "imagem": "https://via.placeholder.com/150",
+      "ano": 2023,
+      "quantidade_musicas": 1,
+      "duracao_total": "3:00"
+    },
+    {
+      "id": "28",
+      "nome": "Album 28",
+      "imagem": "https://via.placeholder.com/150",
+      "ano": 2023,
+      "quantidade_musicas": 1,
+      "duracao_total": "3:00"
+    },
+    {
+      "id": "29",
+      "nome": "Album 29",
+      "imagem": "https://via.placeholder.com/150",
+      "ano": 2023,
+      "quantidade_musicas": 1,
+      "duracao_total": "3:00"
+    },
+    {
+      "id": "30",
+      "nome": "Album 30",
+      "imagem": "https://via.placeholder.com/150",
+      "ano": 2023,
+      "quantidade_musicas": 1,
+      "duracao_total": "3:00"
+    },
+    {
+      "id": "31",
+      "nome": "Album 31",
+      "imagem": "https://via.placeholder.com/150",
+      "ano": 2023,
+      "quantidade_musicas": 1,
+      "duracao_total": "3:00"
+    },
+    {
+      "id": "32",
+      "nome": "Album 32",
+      "imagem": "https://via.placeholder.com/150",
+      "ano": 2023,
+      "quantidade_musicas": 1,
+      "duracao_total": "3:00"
+    }
+  ],
+  "musicas": [
+    {
+      "id": "1",
+      "titulo": "Lost In The City",
+      "artista": "HoliznaCC0",
+      "arquivo": "/music/HoliznaCC0-HowCanThingsBe.mp3",
+      "album_id": "1"
+    },
+    {
+      "id": "2",
+      "titulo": "Sensual Folk",
+      "artista": "Scott Holmes Music",
+      "arquivo": "/music/HoliznaCC0 - Lost In The City.mp3",
+      "album_id": "2"
+    },
+    {
+      "id": "3",
+      "titulo": "January-June-and-December",
+      "artista": "Ketsa",
+      "arquivo": "/music/Ketsa - January-June-and-December.mp3",
+      "album_id": "3"
+    },
+    {
+      "id": "4",
+      "titulo": "How Can Things Be",
+      "artista": "HoliznaCC0",
+      "arquivo": "/music/Scott Holmes Music - Sensual Folk.mp3",
+      "album_id": "4"
+    },
+    {
+      "id": "5",
+      "titulo": "Morning Coffee",
+      "artista": "HoliznaCC0",
+      "arquivo": "/music/BomDiaFlorDoDia/HoliznaCC0 - Morning Coffee.mp3",
+      "album_id": "5"
+    },
+    {
+      "id": "6",
+      "titulo": "No-Clouds",
+      "artista": "Ketsa",
+      "arquivo": "/music/BomDiaFlorDoDia/Ketsa - No-Clouds.mp3",
+      "album_id": "6"
+    },
+    {
+      "id": "7",
+      "titulo": "7AM",
+      "artista": "Ketsa",
+      "arquivo": "/music/BomDiaFlorDoDia/Ketsa - 7AM.mp3",
+      "album_id": "7"
+    },
+    {
+      "id": "8",
+      "titulo": "On That Day",
+      "artista": "Ketsa",
+      "arquivo": "/music/BomDiaFlorDoDia/Ketsa - On That Day.mp3",
+      "album_id": "8"
+    },
+    {
+      "id": "9",
+      "titulo": "Ye",
+      "artista": "Double-F The King",
+      "arquivo": "/music/ThatsARap/Double-F the King - Ye.mp3",
+      "album_id": "9"
+    },
+    {
+      "id": "10",
+      "titulo": "WitchCraft",
+      "artista": "HoliznaCC0",
+      "arquivo": "/music/ThatsARap/HoliznaCC0 - WitchCraft.mp3",
+      "album_id": "10"
+    },
+    {
+      "id": "11",
+      "titulo": "darbar larfves",
+      "artista": "Yellow Omm",
+      "arquivo": "/music/ThatsARap/HoliznaRAPS - PTSD.mp3",
+      "album_id": "11"
+    },
+    {
+      "id": "12",
+      "titulo": "PTSD",
+      "artista": "HoliznaRAPS",
+      "arquivo": "/music/ThatsARap/Yellow Omm - darbar larfves.mp3",
+      "album_id": "12"
+    },
+    {
+      "id": "13",
+      "titulo": "Good Life ft. Macflowz",
+      "artista": "Double-F The King",
+      "arquivo": "/music/FESTINHA DE QUINTAL/Double-F the King - Good Life Ft. Macflowz.mp3",
+      "album_id": "13"
+    },
+    {
+      "id": "14",
+      "titulo": "Beautiful",
+      "artista": "Ketsa",
+      "arquivo": "/music/FESTINHA DE QUINTAL/Ketsa - Beautiful.mp3",
+      "album_id": "14"
+    },
+    {
+      "id": "15",
+      "titulo": "420",
+      "artista": "Ketsa",
+      "arquivo": "/music/FESTINHA DE QUINTAL/Ketsa - 420.mp3",
+      "album_id": "15"
+    },
+    {
+      "id": "16",
+      "titulo": "Endless Sunny Afternoon",
+      "artista": "Lobo Loco",
+      "arquivo": "/music/FESTINHA DE QUINTAL/Lobo Loco - Endless Sunny Afternoon (ID 1684) (1).mp3",
+      "album_id": "16"
+    },
+    {
+      "id": "17",
+      "titulo": "Music Got Me High",
+      "artista": "Double-F The King",
+      "arquivo": "/music/CHILLING/Double-F the King - Music Got Me High.mp3",
+      "album_id": "17"
+    },
+    {
+      "id": "18",
+      "titulo": "Good Kids",
+      "artista": "HoliznaRAPS",
+      "arquivo": "/music/CHILLING/HoliznaRAPS - Good Kids.mp3",
+      "album_id": "18"
+    },
+    {
+      "id": "19",
+      "titulo": "Counting Sheep",
+      "artista": "Baners",
+      "arquivo": "/music/CHILLING/Baners - Counting Sheep.mp3",
+      "album_id": "19"
+    },
+    {
+      "id": "20",
+      "titulo": "April Showers",
+      "artista": "HoliznaCC0",
+      "arquivo": "/music/CHILLING/HoliznaCC0 - April Showers.mp3",
+      "album_id": "20"
+    },
+    {
+      "id": "21",
+      "titulo": "Bonnie and Clyde",
+      "artista": "Double-F The King",
+      "arquivo": "/music/PARA OUVIR COM THE MOZAO/Double-F the King - Bonnie and Clyde.mp3",
+      "album_id": "21"
+    },
+    {
+      "id": "22",
+      "titulo": "Step By Step",
+      "artista": "Baners",
+      "arquivo": "/music/PARA OUVIR COM THE MOZAO/Baners - Step By Step.mp3",
+      "album_id": "22"
+    },
+    {
+      "id": "23",
+      "titulo": "Guesses",
+      "artista": "Ketsa",
+      "arquivo": "/music/PARA OUVIR COM THE MOZAO/Ketsa - Guesses.mp3",
+      "album_id": "23"
+    },
+    {
+      "id": "24",
+      "titulo": "Desire",
+      "artista": "Ketsa",
+      "arquivo": "/music/PARA OUVIR COM THE MOZAO/Ketsa - Desire.mp3",
+      "album_id": "24"
+    },
+    {
+      "id": "25",
+      "titulo": "From-Pillar-To-Post",
+      "artista": "Ketsa",
+      "arquivo": "/music/SUNNY/Ketsa - From-Pillar-To-Post.mp3",
+      "album_id": "25"
+    },
+    {
+      "id": "26",
+      "titulo": "Stealing Glimpses Of Your Face",
+      "artista": "HoliznaCC0",
+      "arquivo": "/music/SUNNY/HoliznaCC0 - Stealing Glimpses Of Your Face.mp3",
+      "album_id": "26"
+    },
+    {
+      "id": "27",
+      "titulo": "Overstand",
+      "artista": "Ketsa",
+      "arquivo": "/music/SUNNY/Ketsa - Overstand.mp3",
+      "album_id": "27"
+    },
+    {
+      "id": "28",
+      "titulo": "We Are One",
+      "artista": "Scott Holmes Music",
+      "arquivo": "/music/SUNNY/Scott Holmes Music - We Are One.mp3",
+      "album_id": "28"
+    },
+    {
+      "id": "29",
+      "titulo": "Lala",
+      "artista": "Ketsa",
+      "arquivo": "/music/BOSS BEAT/Ketsa - Lala.mp3",
+      "album_id": "29"
+    },
+    {
+      "id": "30",
+      "titulo": "After You",
+      "artista": "Ketsa",
+      "arquivo": "/music/BOSS BEAT/Ketsa - After You.mp3",
+      "album_id": "30"
+    },
+    {
+      "id": "31",
+      "titulo": "Stylish Groove",
+      "artista": "Scott Holmes Music",
+      "arquivo": "/music/BOSS BEAT/Scott Holmes Music - Stylish Groove.mp3",
+      "album_id": "31"
+    },
+    {
+      "id": "32",
+      "titulo": "The New Me",
+      "artista": "Leisure-B",
+      "arquivo": "/music/BOSS BEAT/Leisure-B - The New Me.mp3",
+      "album_id": "32"
+    }
+  ],
+  "playlists": [
+    {
+      "id": "1",
+      "user_id": 1,
+      "type": "Pública",
+      "name": "A alguns quilômetros de lugar nenhum",
+      "cover": "../img/albuns/1.jpg",
       "musicas": [
-        {
-          "id": 1,
-          "nome": "Lala",
-          "cantor": "Ketsa",
-          "arquivo": "/music/BOSS BEAT/Ketsa - Lala.mp3"
-        },
-        {
-          "id": 2,
-          "nome": "After You",
-          "cantor": "Ketsa",
-          "arquivo": "/music/BOSS BEAT/Ketsa - After You.mp3"
-        },
-        {
-          "id": 3,
-          "nome": "Stylish Groove",
-          "cantor": "Scott Holmes Music",
-          "arquivo": "/music/BOSS BEAT/Scott Holmes Music - Stylish Groove.mp3"
-        },
-        {
-          "id": 4,
-          "nome": "The New Me",
-          "cantor": "Leisure-B",
-          "arquivo": "/music/BOSS BEAT/Leisure-B - The New Me.mp3"
-        }
-      ]
+        1,
+        2,
+        3,
+        4
+      ],
+      "created_at": "2024-07-31"
+    },
+    {
+      "id": "2",
+      "user_id": 2,
+      "type": "Privada",
+      "name": "Bom dia, flor do dia",
+      "cover": "../img/albuns/2.jpg",
+      "musicas": [
+        5,
+        6,
+        7,
+        8
+      ],
+      "created_at": "2024-07-31"
+    },
+    {
+      "id": "3",
+      "user_id": 3,
+      "type": "Pública",
+      "name": "That's a rap!",
+      "cover": "../img/albuns/3.jpg",
+      "musicas": [
+        9,
+        10,
+        11,
+        12
+      ],
+      "created_at": "2024-07-31"
+    },
+    {
+      "id": "4",
+      "user_id": 4,
+      "type": "Privada",
+      "name": "Festinha de quintal",
+      "cover": "../img/albuns/4.jpeg",
+      "musicas": [
+        13,
+        14,
+        15,
+        16
+      ],
+      "created_at": "2024-07-31"
+    },
+    {
+      "id": "5",
+      "user_id": 5,
+      "type": "Pública",
+      "name": "Chilling",
+      "cover": "../img/albuns/5.jpeg",
+      "musicas": [
+        17,
+        18,
+        19,
+        20
+      ],
+      "created_at": "2024-07-31"
+    },
+    {
+      "id": "6",
+      "user_id": 1,
+      "type": "Privada",
+      "name": "Para ouvir com The Mozão",
+      "cover": "../img/albuns/6.jpeg",
+      "musicas": [
+        21,
+        22,
+        23,
+        24
+      ],
+      "created_at": "2024-07-31"
+    },
+    {
+      "id": "7",
+      "user_id": 2,
+      "type": "Pública",
+      "name": "Sunny",
+      "cover": "../img/albuns/7.jpeg",
+      "musicas": [
+        25,
+        26,
+        27,
+        28
+      ],
+      "created_at": "2024-07-31"
+    },
+    {
+      "id": "8",
+      "user_id": 3,
+      "type": "Privada",
+      "name": "Boss Beat",
+      "cover": "../img/albuns/8.jpeg",
+      "musicas": [
+        29,
+        30,
+        31,
+        32
+      ],
+      "created_at": "2024-07-31"
     },
     {
       "id": "27bd",
-      "name": "Teste"
+      "user_id": 4,
+      "type": "Pública",
+      "name": "Teste",
+      "created_at": "2024-07-31"
     },
     {
       "id": "7462",
+      "user_id": 5,
+      "type": "Privada",
       "name": "cueco",
       "cover": "https://cptstatic.s3.amazonaws.com/imagens/enviadas/materias/materia6486/caracteristicas-do-coqueiro-e-do-ambiente-ideal-para-seu-desenvolvimento-cpt.jpg",
       "created_at": "2024-07-24"
     },
     {
       "id": "8cc0",
+      "user_id": 1,
+      "type": "Pública",
       "name": "tes",
       "cover": "te",
       "created_at": "2024-07-24"
     },
     {
       "id": "2caf",
+      "user_id": 2,
+      "type": "Privada",
       "name": "s",
       "cover": "sss",
       "created_at": "2024-07-25"
-    }
-  ],
-  "usuarios": [
-    {
-      "seguindo": 3,
-      "seguidores": 5,
-      "email": "es@g.com",
-      "user_photo": "https://www.academia.org.br/sites/default/files/conteudo/a-lideranca-de-machado-de-assis-1.jpg",
-      "username": "happyUser",
-      "senha": "123456",
-      "data": "2022-05-04",
-      "nome": "ezequielss",
-      "id": "1"
-    },
-    {
-      "nome": "Ezequiel Sousa",
-      "senha": "123456",
-      "email": "teste@g.com",
-      "data": "1995-04-17",
-      "id": "2"
-    },
-    {
-      "email": "teste@g.com",
-      "senha": "123456",
-      "data": "2022-05-02",
-      "nome": "Ezequiel",
-      "id": "3"
-    },
-    {
-      "email": "teste@g.com",
-      "senha": "123456",
-      "data": "2022-05-02",
-      "nome": "Ezequiels",
-      "id": "4"
-    },
-    {
-      "email": "teste@g.com",
-      "senha": "123456",
-      "data": "2022-05-24",
-      "nome": "Ezequiels",
-      "id": "5"
-    }
-  ],
-  "musicas": [
-    {
-      "id": "1",
-      "nome": "Lost In The City",
-      "cantor": "HoliznaCC0",
-      "arquivo": "/music/HoliznaCC0-HowCanThingsBe.mp3"
-    },
-    {
-      "id": "2",
-      "nome": "Sensual Folk",
-      "cantor": "Scott Holmes Music",
-      "arquivo": "/music/HoliznaCC0 - Lost In The City.mp3"
-    },
-    {
-      "id": "3",
-      "nome": "January-June-and-December",
-      "cantor": "Ketsa",
-      "arquivo": "/music/Ketsa - January-June-and-December.mp3"
-    },
-    {
-      "id": "4",
-      "nome": "How Can Things Be",
-      "cantor": "HoliznaCC0",
-      "arquivo": "/music/Scott Holmes Music - Sensual Folk.mp3"
-    },
-    {
-      "id": "5",
-      "nome": "Morning Coffee",
-      "cantor": "HoliznaCC0",
-      "arquivo": "/music/BomDiaFlorDoDia/HoliznaCC0 - Morning Coffee.mp3"
-    },
-    {
-      "id": "6",
-      "nome": "No-Clouds",
-      "cantor": "Ketsa",
-      "arquivo": "/music/BomDiaFlorDoDia/Ketsa - No-Clouds.mp3"
-    },
-    {
-      "id": "7",
-      "nome": "7AM",
-      "cantor": "Ketsa",
-      "arquivo": "/music/BomDiaFlorDoDia/Ketsa - 7AM.mp3"
-    },
-    {
-      "id": "8",
-      "nome": "On That Day",
-      "cantor": "Ketsa",
-      "arquivo": "/music/BomDiaFlorDoDia/Ketsa - On That Day.mp3"
-    },
-    {
-      "id": "9",
-      "nome": "Ye",
-      "cantor": "Double-F The King",
-      "arquivo": "/music/ThatsARap/Double-F the King - Ye.mp3"
-    },
-    {
-      "id": "10",
-      "nome": "WitchCraft",
-      "cantor": "HoliznaCC0",
-      "arquivo": "/music/ThatsARap/HoliznaCC0 - WitchCraft.mp3"
-    },
-    {
-      "id": "11",
-      "nome": "darbar larfves",
-      "cantor": "Yellow Omm",
-      "arquivo": "/music/ThatsARap/HoliznaRAPS - PTSD.mp3"
-    },
-    {
-      "id": "12",
-      "nome": "PTSD",
-      "cantor": "HoliznaRAPS",
-      "arquivo": "/music/ThatsARap/Yellow Omm - darbar larfves.mp3"
-    },
-    {
-      "id": "13",
-      "nome": "Good Life ft. Macflowz",
-      "cantor": "Double-F The King",
-      "arquivo": "/music/FESTINHA DE QUINTAL/Double-F the King - Good Life Ft. Macflowz.mp3"
-    },
-    {
-      "id": "14",
-      "nome": "Beautiful",
-      "cantor": "Ketsa",
-      "arquivo": "/music/FESTINHA DE QUINTAL/Ketsa - Beautiful.mp3"
-    },
-    {
-      "id": "15",
-      "nome": "420",
-      "cantor": "Ketsa",
-      "arquivo": "/music/FESTINHA DE QUINTAL/Ketsa - 420.mp3"
-    },
-    {
-      "id": "16",
-      "nome": "Endless Sunny Afternoon",
-      "cantor": "Lobo Loco",
-      "arquivo": "/music/FESTINHA DE QUINTAL/Lobo Loco - Endless Sunny Afternoon (ID 1684) (1).mp3"
-    },
-    {
-      "id": "17",
-      "nome": "Music Got Me High",
-      "cantor": "Double-F The King",
-      "arquivo": "/music/CHILLING/Double-F the King - Music Got Me High.mp3"
-    },
-    {
-      "id": "18",
-      "nome": "Good Kids",
-      "cantor": "HoliznaRAPS",
-      "arquivo": "/music/CHILLING/HoliznaRAPS - Good Kids.mp3"
-    },
-    {
-      "id": "19",
-      "nome": "Counting Sheep",
-      "cantor": "Baners",
-      "arquivo": "/music/CHILLING/Baners - Counting Sheep.mp3"
-    },
-    {
-      "id": "20",
-      "nome": "April Showers",
-      "cantor": "HoliznaCC0",
-      "arquivo": "/music/CHILLING/HoliznaCC0 - April Showers.mp3"
-    },
-    {
-      "id": "21",
-      "nome": "Bonnie and Clyde",
-      "cantor": "Double-F The King",
-      "arquivo": "/music/PARA OUVIR COM THE MOZAO/Double-F the King - Bonnie and Clyde.mp3"
-    },
-    {
-      "id": "22",
-      "nome": "Step By Step",
-      "cantor": "Baners",
-      "arquivo": "/music/PARA OUVIR COM THE MOZAO/Baners - Step By Step.mp3"
-    },
-    {
-      "id": "23",
-      "nome": "Guesses",
-      "cantor": "Ketsa",
-      "arquivo": "/music/PARA OUVIR COM THE MOZAO/Ketsa - Guesses.mp3"
-    },
-    {
-      "id": "24",
-      "nome": "Desire",
-      "cantor": "Ketsa",
-      "arquivo": "/music/PARA OUVIR COM THE MOZAO/Ketsa - Desire.mp3"
-    },
-    {
-      "id": "25",
-      "nome": "From-Pillar-To-Post",
-      "cantor": "Ketsa",
-      "arquivo": "/music/SUNNY/Ketsa - From-Pillar-To-Post.mp3"
-    },
-    {
-      "id": "26",
-      "nome": "Stealing Glimpses Of Your Face",
-      "cantor": "HoliznaCC0",
-      "arquivo": "/music/SUNNY/HoliznaCC0 - Stealing Glimpses Of Your Face.mp3"
-    },
-    {
-      "id": "27",
-      "nome": "Overstand",
-      "cantor": "Ketsa",
-      "arquivo": "/music/SUNNY/Ketsa - Overstand.mp3"
-    },
-    {
-      "id": "28",
-      "nome": "We Are One",
-      "cantor": "Scott Holmes Music",
-      "arquivo": "/music/SUNNY/Scott Holmes Music - We Are One.mp3"
-    },
-    {
-      "id": "29",
-      "nome": "Lala",
-      "cantor": "Ketsa",
-      "arquivo": "/music/BOSS BEAT/Ketsa - Lala.mp3"
-    },
-    {
-      "id": "30",
-      "nome": "After You",
-      "cantor": "Ketsa",
-      "arquivo": "/music/BOSS BEAT/Ketsa - After You.mp3"
-    },
-    {
-      "id": "31",
-      "nome": "Stylish Groove",
-      "cantor": "Scott Holmes Music",
-      "arquivo": "/music/BOSS BEAT/Scott Holmes Music - Stylish Groove.mp3"
-    },
-    {
-      "id": "32",
-      "nome": "The New Me",
-      "cantor": "Leisure-B",
-      "arquivo": "/music/BOSS BEAT/Leisure-B - The New Me.mp3"
     }
   ]
 }

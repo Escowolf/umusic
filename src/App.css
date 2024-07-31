@@ -3,19 +3,13 @@
   min-width: 250px;
   --Texto: #333333;
   --TextoSecundario: #F5F5F5;
-  --Sidebar: #2A2A2A;
+  --BackgroundSidebar: #e57147c4;
   --Background: #F5F5F5;
   --Hover: #E57147;
   --IconesLinks: #5D1A4A;
   --Navbar: #E57147;
   --Footer: #2A2A2A;
 
-  /* --Texto: #333333;
-  --Background: #F5F5F5;
-  --Hover: #E57147;
-  --IconesLinks: #5D1A4A;
-  --Navbar: #E57147;
-  --NavFooter: #2A2A2A; */
   --Transform: #d0d0d0c1;
   --Shadow: 0 0 0.2em #ffffff, 0 0 0.2em #ded8ff, 0 0 0.2em #747474;
 
@@ -30,11 +24,14 @@
 
 .dark-mode {
   --Texto: #F2F2F2;
-  --Background: #1E1E1E;
-  --Hover: #F5F5F5;
+  --TextoSecundario: #1E1E1E;
+  --BackgroundSidebar: #5D1A4Ac4;
+  --Background: #2A2A2A;
+  --Hover: #5D1A4A;
   --IconesLinks: #E57147;
   --Navbar: #5D1A4A;
-  --NavFooter: #2A2A2A;
+  --Footer: #2A2A2A;
+
   --Transform: #2a2a2ac1;
   --Shadow: 0 0 0.2em #000000, 0 0 0.2em #8877FF, 0 0 0.2em #100270;
 }
@@ -53,6 +50,20 @@ code {
     monospace;
 }
 
+/* Container para o conteúdo principal do site */
+.with-sidebar {
+  margin-left: 240px;
+  margin-top: 95px;
+  padding: 0px;
+  flex: 1;
+}
+
+.main-content {
+  margin-left: 0px;
+  margin-top: 95px;
+  padding: 0px;
+  flex: 1;
+}
 
 .section {
   padding: 5vh 10vw;
@@ -81,6 +92,11 @@ code {
 @media (max-width:900px) {
   h1 {
     font-size: 2rem !important;
+  }
+
+  .main-content {
+    padding: 0px;
+    flex: 1;
   }
 
 }

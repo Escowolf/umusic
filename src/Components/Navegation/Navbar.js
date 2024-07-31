@@ -29,17 +29,16 @@ function Navbar() {
   };
 
   return (
-    <header className="nav-container">
-      <nav className={`navbar ${isResponsive ? "responsive" : ""}`}>
+      <nav id="navbar" className={`nav-container ${isResponsive ? "responsive" : ""}`}>
         <Link to={isAuthenticated && currentUser ? "/home" : "/"} className="nav-logo">
           <p className="logo-name">uMusic</p>
         </Link>
-        <div className="nav-content">
+        <div className="nav-drop">
           {!isAuthenticated ? (
-            <div className="nav-links">
-              <Link to="/faq" className="nav-item" onClick={toggleResponsive}>FAQ</Link>
-              <Link to="/signup" className="nav-sign" onClick={toggleResponsive}>Sign up</Link>
-              <Link to="/login" className="nav-log" onClick={toggleResponsive}>Log in <i className="fa-solid fa-right-to-bracket"></i></Link>
+            <div className="nav-drop-content">
+              <Link to="/faq" className="nav-item nav-drop-item" onClick={toggleResponsive}>FAQ</Link>
+              <Link to="/signup" className="nav-sign nav-drop-item" onClick={toggleResponsive}>Sign up</Link>
+              <Link to="/login" className="nav-log nav-drop-item" onClick={toggleResponsive}>Log in <i className="fa-solid fa-right-to-bracket"></i></Link>
             </div>
           ) : (
             <div className="nav-user">
@@ -61,16 +60,15 @@ function Navbar() {
             </div>
           )}
           <div className="nav-icons">
-            <Link to="#" className="nav-item" onClick={toggleLightMode}>
+            <Link to="#" className="nav-icon-item" onClick={toggleLightMode}>
               <i id="light-mode" className={`fa-regular fa-lightbulb ${isLightMode ? "active" : ""}`} alt="Toggle light mode"></i>
             </Link>
-            <Link to="#" className="dropbtn nav-icon nav-item" onClick={toggleResponsive}>
+            <Link to="#" className="dropbtn nav-icon-item" onClick={toggleResponsive}>
               <i className="fa fa-bars"></i>
             </Link>
           </div>
         </div>
       </nav>
-    </header>
   );
 }
 

@@ -1,13 +1,11 @@
 import { useState } from "react";
-import axios from "axios";
 import logo from '../img/logoUmus.png';
 import { Link } from "react-router-dom";
-import { useAuth } from '../../contexts/AuthContext'; 
+import { useAuth } from '../../contexts/AuthContext';
 import '../css/Forms.css';
 
 function Login() {
-
-    const { login } = useAuth();
+    const { login, loginWithGoogle } = useAuth();
     const [email, setEmail] = useState('');
     const [senha, setSenha] = useState('');
     const [error, setError] = useState('');
@@ -15,24 +13,19 @@ function Login() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const { data } = await axios.get(`http://localhost:4000/usuarios?email=${email}`);
-            const usuario = data[0];
-
-            if (!usuario) {
-                setError("Usuário não encontrado!");
-                return;
-            }
-
-            if (usuario.senha !== senha) {
-                setError("Senha incorreta!");
-                return;
-            } else {
-                login(usuario);
-            }
-
+            await login(email, senha);
         } catch (err) {
-            console.error('API error:', err);
+            console.error('Login error:', err);
             setError("Ocorreu um erro. Tente novamente.");
+        }
+    };
+
+    const handleGoogleLogin = async () => {
+        try {
+            await loginWithGoogle();
+        } catch (err) {
+            console.error('Google login error:', err);
+            setError("Ocorreu um erro com o login do Google. Tente novamente.");
         }
     };
 
@@ -42,7 +35,7 @@ function Login() {
             <h1>Log in to uMusic</h1>
             <span className="form-social">
                 <i className="item fa-brands fa-facebook"></i>
-                <i className="item fa-brands fa-google"></i>
+                <i className="item fa-brands fa-google" onClick={handleGoogleLogin} />
                 <i className="item fa-brands fa-apple"></i>
             </span>
             <hr />

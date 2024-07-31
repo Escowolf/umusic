@@ -1,50 +1,63 @@
 import { createContext, useContext, useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom'; 
+import { auth, googleProvider } from './firebaseConfig';
+import { signInWithEmailAndPassword, signInWithPopup } from 'firebase/auth';
+import { database, ref, get, set } from './firebaseConfig';
 
 const AuthContext = createContext();
 
 export function AuthProvider({ children }) {
     const [isAuthenticated, setIsAuthenticated] = useState(false);
     const [currentUser, setCurrentUser] = useState(null);
-    const [token, setToken] = useState(null);
     const [currentMusic, setCurrentMusic] = useState(null);
     const navigate = useNavigate();
 
     useEffect(() => {
-        // Verifica se há um token armazenado no localStorage
-        const storedToken = localStorage.getItem('token');
+        const unsubscribe = auth.onAuthStateChanged(user => {
+            if (user) {
+                setCurrentUser(user);
+                setIsAuthenticated(true);
+            } else {
+                setCurrentUser(null);
+                setIsAuthenticated(false);
+            }
+        });
 
-        if (storedToken) {
-            // Decodifica o token para recuperar o usuário
-            const payload = JSON.parse(atob(storedToken));
-            setToken(storedToken);
-            setCurrentUser(payload.usuario);
-            setIsAuthenticated(true);
-        }
+        return unsubscribe;
     }, []);
 
-    const login = (usuario) => {
-        // Gera um token falso com uma função simples
-        const payload = { usuario };
-        const token = btoa(JSON.stringify(payload)); // Gera um token base64 (não seguro)
+    const login = async (email, senha) => {
+        try {
+            const userCredential = await signInWithEmailAndPassword(auth, email, senha);
+            setCurrentUser(userCredential.user);
+            setIsAuthenticated(true);
+            navigate('/home');
+        } catch (error) {
+            throw error;
+        }
+    };
 
-        setIsAuthenticated(true);
-        setCurrentUser(usuario);
-        setToken(token);
-        localStorage.setItem('token', token);
-        navigate('/home');
+    const loginWithGoogle = async () => {
+        try {
+            const result = await signInWithPopup(auth, googleProvider);
+            setCurrentUser(result.user);
+            setIsAuthenticated(true);
+            navigate('/home');
+        } catch (error) {
+            console.error('Google login error:', error);
+        }
     };
 
     const logout = () => {
-        setIsAuthenticated(false);
-        setCurrentUser(null);
-        setToken(null);
-        localStorage.removeItem('token');
-        navigate('/');
+        auth.signOut().then(() => {
+            setIsAuthenticated(false);
+            setCurrentUser(null);
+            navigate('/');
+        });
     };
 
     return (
-        <AuthContext.Provider value={{ isAuthenticated, currentUser, login, logout, token, currentMusic, setCurrentMusic }}>
+        <AuthContext.Provider value={{ isAuthenticated, currentUser, login, logout, loginWithGoogle, currentMusic, setCurrentMusic, database, ref, get, set }}>
             {children}
         </AuthContext.Provider>
     );

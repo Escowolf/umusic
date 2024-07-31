@@ -1,38 +1,30 @@
 import React, { useEffect, useState } from 'react';
 import { useAuth } from '../../contexts/AuthContext';
-import axios from 'axios';
+import { database, storage, ref as dbRef, set, get, ref as storageRef, uploadBytes, getDownloadURL } from '../../contexts/firebaseConfig';
 import '../css/Profile.css';
 
 function Profile() {
-    const { token, currentUser } = useAuth();
+    const { currentUser } = useAuth(); // Obtém o usuário autenticado
     const [usuario, setUsuario] = useState({ nome: '', user_photo: '' });
     const [editMode, setEditMode] = useState(false);
-    const [newName, setNewName] = useState(currentUser?.nome || '');
+    const [newName, setNewName] = useState(currentUser?.displayName || ''); // Usar displayName se disponível
     const [newPhoto, setNewPhoto] = useState(null);
 
     useEffect(() => {
-        if (token) {
-            try {
-                const payloadBase64 = token.split('.')[1];
-                const decodedPayload = JSON.parse(atob(payloadBase64));
-                const userId = decodedPayload.usuario.id;
+        if (currentUser) {
+            const userId = currentUser.uid; // Usar UID do Firebase Auth
 
-                axios.get(`http://localhost:4000/usuarios/${userId}`, {
-                    headers: {
-                        Authorization: `Bearer ${token}`,
-                    },
-                })
-                    .then((response) => {
-                        setUsuario(response.data);
-                    })
-                    .catch((error) => {
-                        console.error('Erro ao pegar dados do usuário:', error);
-                    });
-            } catch (e) {
-                console.error('Token inválido:', e);
-            }
+            // Recupera dados do usuário
+            const userRef = dbRef(database, `usuarios/${userId}`);
+            get(userRef).then((snapshot) => {
+                if (snapshot.exists()) {
+                    setUsuario(snapshot.val());
+                }
+            }).catch((error) => {
+                console.error('Erro ao pegar dados do usuário:', error);
+            });
         }
-    }, [token]);
+    }, [currentUser]);
 
     const handleEditClick = () => {
         setEditMode(true);
@@ -46,32 +38,35 @@ function Profile() {
         setNewPhoto(event.target.files[0]);
     };
 
-    const handleSaveClick = () => {
-        if (token) {
-            const formData = new FormData();
-            formData.append('nome', newName);
-            if (newPhoto) {
-                formData.append('user_photo', newPhoto);
-            }
+    const handleSaveClick = async () => {
+        if (currentUser) {
+            try {
+                const userId = currentUser.uid; 
+                let photoURL = usuario.user_photo;
 
-            axios.put(`http://localhost:4000/usuarios/${currentUser?.id}`, formData, {
-                headers: {
-                    Authorization: `Bearer ${token}`,
-                    'Content-Type': 'multipart/form-data'
+                if (newPhoto) {
+                    const photoRef = storageRef(storage, `user_photos/${userId}`);
+                    await uploadBytes(photoRef, newPhoto);
+                    photoURL = await getDownloadURL(photoRef);
                 }
-            })
-            .then(() => {
-                // Atualiza o nome e a foto no estado local
+
+                // Atualiza os dados do usuário no Realtime Database
+                const userRef = dbRef(database, `usuarios/${userId}`);
+                await set(userRef, {
+                    nome: newName,
+                    user_photo: photoURL
+                });
+
+                // Atualiza o estado local
                 setUsuario(prev => ({
                     ...prev,
                     nome: newName,
-                    user_photo: newPhoto ? URL.createObjectURL(newPhoto) : prev.user_photo
+                    user_photo: photoURL
                 }));
                 setEditMode(false);
-            })
-            .catch((error) => {
+            } catch (error) {
                 console.error('Erro ao atualizar o perfil:', error);
-            });
+            }
         }
     };
 
@@ -79,7 +74,7 @@ function Profile() {
         <div className="profile-container">
             <div className="profile-header">
                 <img
-                    src={usuario.user_photo || currentUser?.user_photo}
+                    src={usuario.user_photo || currentUser?.photoURL}
                     className="profile-photo"
                     alt="User Example"
                 />
@@ -118,4 +113,3 @@ function Profile() {
 }
 
 export default Profile;
-

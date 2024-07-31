@@ -4,28 +4,31 @@
     padding: 0px 20px;
     width: calc(100% - 40px);
     position: fixed;
-    top:0;
-    z-index:1;
-}
-
-.navbar {
+    top: 0;
+    z-index: 1;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.nav-content {
+.nav-drop {
     display: flex;
     align-items: center;
     justify-content: space-around;
 }
 
-.nav-icon {
+.nav-drop-content {
+    display: flex;
+    align-items: center;
+}
+
+.dropbtn {
     display: none;
 }
 
 /* Estilos comuns dos itens de navegação */
 .nav-item,
+.nav-icon-item,
 .logo_name {
     text-decoration: none;
     color: var(--IconesLinks);
@@ -95,35 +98,30 @@
 } */
 
 @media (max-width:900px) {
-    .nav-container {
-        justify-content: space-between;
-    }
-
-    .logo_name {
-        font-size: 20px;
-    }
-
-    .nav-icon {
-        display: inline;
-    }
-
-    .nav-links {
-        color: var(--Background);
+    .nav-drop-content {
         display: none;
         position: absolute;
-        top: 50px;
-        right: 5px;
-        border-radius: 4px;
-        background-color: var(--Hover);
+        top: 60px;
+        right: 20px;
+        background-color: var(--Navbar);
         box-shadow: 0 8px 16px rgba(0, 0, 0, 0.678);
         flex-direction: column;
         width: 150px;
+        border-radius: 4px;
+        z-index: 10;
+        color: var(--Background);
     }
 
-    .nav-links .nav-link {
-        padding: 20px;
-        text-align: left;
+    .nav-drop-item {
         width: 100%;
+    }
+
+    .nav-container.responsive .nav-drop-content {
+        display: flex;
+    }
+
+    .dropbtn {
+        display: inline;
     }
 
     .nav-item:hover {
@@ -132,8 +130,10 @@
     }
 
     .nav-log,
-    .nav-sign {
+    .nav-sign,
+    .nav-item {
         margin: 0;
+        padding: 0;
         border: none;
         border-radius: 0;
     }

@@ -2,7 +2,7 @@
 .sidebar {
     width: 200px;
     height: calc(100vh - 60px);
-    background-color: #e57147c4;
+    background-color: var(--Sidebar);
     color: white;
     overflow-y: auto;
     padding: 20px;
@@ -38,21 +38,8 @@
     background-color: var(--Hover);
 }
 
-/* Container para o conteúdo principal do site */
-.main-content {
-    margin-left: 240px;
-    margin-top:95px;
-    padding: 0px;
-    flex: 1;
-}
 
 @media (max-width: 900px) {
-    .main-content {
-        margin: 0px;
-        padding: 0px;
-        flex: 1;
-    }
-
     .sidebar {
         display: none;
     }

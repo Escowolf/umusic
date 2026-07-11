@@ -9,6 +9,8 @@ import CreatePlaylist from '../Pages/PaginasAuth/CreatePlaylist';
 import HomeUser from '../Pages/PaginasAuth/HomeUser';
 import Profile from '../Pages/PaginasAuth/Profile';
 import NewPlaylist from '../Components/PlaylistDetails/NewPlaylist';
+import Musicas from '../Pages/PaginasAuth/Musicas';
+import Explorar from '../Pages/PaginasAuth/Explorar';
 import PrivateRoute from './PrivateRoute';
 import { useAuth } from '../contexts/AuthContext';
 
@@ -33,6 +35,8 @@ function RoutesConfig() {
       <Route path="/playlists/:_id" element={<PrivateRoute element={PlaylistDetail} />} />
       <Route path="/select-music/:_id" element={<PrivateRoute element={NewPlaylist} />} />
       <Route path="/newplaylist" element={<PrivateRoute element={CreatePlaylist} />} />
+      <Route path="/musicas" element={<PrivateRoute element={Musicas} />} />
+      <Route path="/explorar" element={<PrivateRoute element={Explorar} />} />
       <Route path="/home" element={<PrivateRoute element={HomeUser} />} />
       <Route path="/perfil" element={<PrivateRoute element={Profile} />} />
     </Routes>

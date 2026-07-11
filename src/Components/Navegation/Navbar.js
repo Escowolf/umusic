@@ -55,14 +55,12 @@ function Navbar() {
                   aria-expanded={dropdownOpen}
                   aria-label="Abrir menu do usuário"
                 >
-                  <img src={currentUser?.user_photo} alt="User" className="user-avatar" />
-                  <span className="user-name">{currentUser?.username}</span>
+                  <img src={currentUser?.user_photo || '/img/profile.jpg'} alt="User" className="user-avatar" />
+                  <span className="user-name">{currentUser?.displayName || 'Usuário'}</span>
                   <i className="fa-solid fa-caret-down" aria-hidden="true"></i>
                 </button>
                 {dropdownOpen && (
                   <div className="dropdown-content" role="menu" aria-label="Menu do usuário">
-                    <Link className="dropdown-item" to="/newplaylist" role="menuitem">Nova Playlist</Link>
-                    <Link className="dropdown-item" to="/perfil" role="menuitem">Perfil</Link>
                     <hr className="dropdown-divider" />
                     <button className="dropdown-btn" onClick={handleLogout} type="button">
                       Sair <i className="fa-solid fa-power-off" aria-hidden="true" />

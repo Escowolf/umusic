@@ -258,7 +258,7 @@ function HomeUser() {
           />
           <div className='home-text-container'>
             <h2 className='home-name'>
-              {currentUser?.nome}
+              {currentUser?.displayName}
             </h2>
             <p className="home-follow-data">{currentUser?.seguidores} seguidores - {currentUser?.seguindo} seguindo</p>
           </div>

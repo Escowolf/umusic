@@ -13,10 +13,10 @@ const decodeStoredToken = (storedToken) => {
 };
 
 function Profile() {
-    const { token, currentUser } = useAuth();
-    const [usuario, setUsuario] = useState({ nome: '', user_photo: '' });
+    const { token, currentUser, updateCurrentUser } = useAuth();
+    const [usuario, setUsuario] = useState({ displayName: '', username: '', user_photo: '' });
     const [editMode, setEditMode] = useState(false);
-    const [newName, setNewName] = useState(currentUser?.nome || '');
+    const [newName, setNewName] = useState(currentUser?.displayName || '');
     const [newPhoto, setNewPhoto] = useState(null);
 
     useEffect(() => {
@@ -35,8 +35,12 @@ function Profile() {
                     },
                 })
                     .then((response) => {
-                        setUsuario(response.data);
-                    })
+                    setUsuario({
+                        ...response.data,
+                        displayName: response.data?.displayName || response.data?.nome || response.data?.username || response.data?.email || '',
+                        username: response.data?.username || response.data?.email || '',
+                    });
+                })
                     .catch((error) => {
                         console.error('Erro ao pegar dados do usuário:', error);
                     });
@@ -58,27 +62,51 @@ function Profile() {
         setNewPhoto(event.target.files[0]);
     };
 
+    const fileToDataUrl = (file) =>
+        new Promise((resolve, reject) => {
+            const reader = new FileReader();
+            reader.onload = () => resolve(reader.result);
+            reader.onerror = () => reject(new Error('Falha ao ler imagem.'));
+            reader.readAsDataURL(file);
+        });
+
     const handleSaveClick = () => {
         if (token) {
-            const formData = new FormData();
-            formData.append('nome', newName);
-            if (newPhoto) {
-                formData.append('user_photo', newPhoto);
-            }
+            const payload = {
+                ...usuario,
+                displayName: newName,
+                nome: newName,
+                username: usuario.username || currentUser?.username || currentUser?.email || '',
+            };
 
-            axios.put(`http://localhost:4000/usuarios/${currentUser?.id}`, formData, {
-                headers: {
-                    Authorization: `Bearer ${token}`,
-                    'Content-Type': 'multipart/form-data'
-                }
-            })
-            .then(() => {
-                // Atualiza o nome e a foto no estado local
-                setUsuario(prev => ({
-                    ...prev,
-                    nome: newName,
-                    user_photo: newPhoto ? URL.createObjectURL(newPhoto) : prev.user_photo
-                }));
+            const request = newPhoto
+                ? fileToDataUrl(newPhoto).then((userPhoto) =>
+                    axios.put(`http://localhost:4000/usuarios/${currentUser?.id}`, {
+                    ...payload,
+                    user_photo: userPhoto,
+                }, {
+                        headers: {
+                            Authorization: `Bearer ${token}`,
+                        }
+                    })
+                )
+                : axios.put(`http://localhost:4000/usuarios/${currentUser?.id}`, payload, {
+                    headers: {
+                        Authorization: `Bearer ${token}`,
+                    }
+                });
+
+            request
+            .then(({ data }) => {
+                const nextUser = {
+                    ...usuario,
+                    ...data,
+                    displayName: data?.displayName || data?.nome || newName,
+                    username: data?.username || usuario.username || currentUser?.username || currentUser?.email || '',
+                };
+
+                setUsuario(nextUser);
+                updateCurrentUser?.(nextUser);
                 setEditMode(false);
             })
             .catch((error) => {
@@ -117,7 +145,7 @@ function Profile() {
                         </div>
                     ) : (
                         <div className="profile-view">
-                            <h1 className="profile-name">{usuario.nome}</h1>
+                            <h1 className="profile-name">{usuario.displayName}</h1>
                             <button onClick={handleEditClick} className="profile-edit-btn">
                                 Editar
                             </button>

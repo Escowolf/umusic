@@ -11,14 +11,18 @@ import Profile from '../Pages/PaginasAuth/Profile';
 import NewPlaylist from '../Components/PlaylistDetails/NewPlaylist';
 import Musicas from '../Pages/PaginasAuth/Musicas';
 import Explorar from '../Pages/PaginasAuth/Explorar';
+import Podcasts from '../Pages/PaginasAuth/Podcasts';
+import Radios from '../Pages/PaginasAuth/Radios';
+import Favorites from '../Pages/PaginasAuth/Favorites';
+import Settings from '../Pages/PaginasAuth/Settings';
 import PrivateRoute from './PrivateRoute';
 import { useAuth } from '../contexts/AuthContext';
 
 function RoutesConfig() {
-  const { isAuthenticated, currentUser } = useAuth();
+  const { isAuthenticated, authLoading, currentUser } = useAuth();
 
   // Retorna Loading enquanto verifica se a autenticação está sendo processada
-  if (isAuthenticated === undefined) {
+  if (authLoading || isAuthenticated === undefined) {
     return <div>Loading...</div>;
   }
   console.log(currentUser);
@@ -29,7 +33,7 @@ function RoutesConfig() {
       <Route path="/faq" element={<Faq />} />
       <Route path="/login" element={!isAuthenticated && !currentUser ? <Login /> : <Navigate to="/home" />} />
       <Route path="/signup" element={!isAuthenticated && !currentUser ?  <Cadastro /> : <Navigate to="/home" />} />
-      <Route path="/" element={!isAuthenticated && !currentUser ?  <Home /> : <Navigate to="/home" />} />
+      <Route path="/" element={<Home />} />
 
       {/* Rotas privadas */}
       <Route path="/playlists/:_id" element={<PrivateRoute element={PlaylistDetail} />} />
@@ -37,6 +41,10 @@ function RoutesConfig() {
       <Route path="/newplaylist" element={<PrivateRoute element={CreatePlaylist} />} />
       <Route path="/musicas" element={<PrivateRoute element={Musicas} />} />
       <Route path="/explorar" element={<PrivateRoute element={Explorar} />} />
+      <Route path="/podcasts" element={<PrivateRoute element={Podcasts} />} />
+      <Route path="/radios" element={<PrivateRoute element={Radios} />} />
+      <Route path="/favorites" element={<PrivateRoute element={Favorites} />} />
+      <Route path="/settings" element={<PrivateRoute element={Settings} />} />
       <Route path="/home" element={<PrivateRoute element={HomeUser} />} />
       <Route path="/perfil" element={<PrivateRoute element={Profile} />} />
     </Routes>

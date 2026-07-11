@@ -9,7 +9,11 @@ import Sidebar from './Components/Navegation/Sidebar';
 import { Toaster } from 'react-hot-toast';
 
 function App() {
-  const { isAuthenticated } = useAuth();
+  const { isAuthenticated, authLoading } = useAuth();
+
+  if (authLoading) {
+    return <div>Loading...</div>;
+  }
 
   return (
     <>

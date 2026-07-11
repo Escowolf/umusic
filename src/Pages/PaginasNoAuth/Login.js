@@ -9,14 +9,14 @@ import '../css/Forms.css';
 function Login() {
 
     const { login } = useAuth();
-    const [email, setEmail] = useState('');
+    const [username, setUsername] = useState('');
     const [senha, setSenha] = useState('');
     const [error, setError] = useState('');
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const { data } = await axios.get(`http://localhost:4000/usuarios?email=${email}`);
+            const { data } = await axios.get(`http://localhost:4000/usuarios?username=${encodeURIComponent(username)}`);
             const usuario = data[0];
 
             if (!usuario) {
@@ -59,18 +59,18 @@ function Login() {
                     <i className="item fa-brands fa-apple"></i>
                 </span>
 
-                <div className="auth-divider"><span>ou use seu e-mail</span></div>
+                <div className="auth-divider"><span>ou use seu username</span></div>
 
                 {error && <p className="error-message">{error}</p>}
                 <div className="form-inputs">
                     <input
                         className="form-item"
-                        id="email"
-                        value={email}
-                        type="email"
-                        onChange={(e) => setEmail(e.target.value)}
-                        placeholder="E-mail"
-                        autoComplete="email"
+                        id="username"
+                        value={username}
+                        type="text"
+                        onChange={(e) => setUsername(e.target.value)}
+                        placeholder="Username"
+                        autoComplete="username"
                         required
                     />
                     <input

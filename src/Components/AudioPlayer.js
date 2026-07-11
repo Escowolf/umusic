@@ -24,6 +24,8 @@ function AudioPlayer({ compact = false }) {
     return null;
   }
 
+  const isLiveSource = playbackSource?.type === 'radio' || currentTrack.isLive;
+
   const formatTime = (value) => {
     if (!Number.isFinite(value) || value < 0) {
       return '0:00';
@@ -55,6 +57,10 @@ function AudioPlayer({ compact = false }) {
       <div className="music-info">
         {playbackSource?.type === 'playlist' ? (
           <span className="audio-player__source">Playlist · {playbackSource.name}</span>
+        ) : playbackSource?.type === 'podcast' ? (
+          <span className="audio-player__source">Podcast · {playbackSource.name}</span>
+        ) : playbackSource?.type === 'radio' || currentTrack.isLive ? (
+          <span className="audio-player__source">Ao vivo · {playbackSource?.name || currentTrack.musicname}</span>
         ) : (
           <span className="audio-player__eyebrow">Tocando agora</span>
         )}
@@ -62,35 +68,39 @@ function AudioPlayer({ compact = false }) {
         <p className="playlist-artist">{currentTrack.artist}</p>
       </div>
 
-      <div className="audio-player__timeline">
-        <div className="progress-container">
-          <input
-            aria-label="Progresso da música"
-            type="range"
-            min="0"
-            max="100"
-            value={duration > 0 ? (currentTime / duration) * 100 : 0}
-            onChange={handleProgressChange}
-          />
-        </div>
+      {!isLiveSource && (
+        <div className="audio-player__timeline">
+          <div className="progress-container">
+            <input
+              aria-label="Progresso da música"
+              type="range"
+              min="0"
+              max="100"
+              value={duration > 0 ? (currentTime / duration) * 100 : 0}
+              onChange={handleProgressChange}
+            />
+          </div>
 
-        <div className="time">
-          <span>{formatTime(currentTime)}</span>
-          <span className="time__separator" aria-hidden="true">/</span>
-          <span>{formatTime(duration)}</span>
+          <div className="time">
+            <span>{formatTime(currentTime)}</span>
+            <span className="time__separator" aria-hidden="true">/</span>
+            <span>{formatTime(duration)}</span>
+          </div>
         </div>
-      </div>
+      )}
 
       <div className="navbar-player__controls">
-        <button
-          type="button"
-          onClick={playPrevious}
-          aria-label="Música anterior"
-          className="navbar-player__icon-button"
-          disabled={!hasPreviousTrack}
-        >
-          <FontAwesomeIcon icon={faBackwardStep} />
-        </button>
+        {!isLiveSource && (
+          <button
+            type="button"
+            onClick={playPrevious}
+            aria-label="Música anterior"
+            className="navbar-player__icon-button"
+            disabled={!hasPreviousTrack}
+          >
+            <FontAwesomeIcon icon={faBackwardStep} />
+          </button>
+        )}
 
         <button
           type="button"
@@ -101,25 +111,29 @@ function AudioPlayer({ compact = false }) {
           <FontAwesomeIcon icon={isPlaying ? faPause : faPlay} />
         </button>
 
-        <button
-          type="button"
-          onClick={playNext}
-          aria-label="Próxima música"
-          className="navbar-player__icon-button"
-          disabled={!hasNextTrack}
-        >
-          <FontAwesomeIcon icon={faForwardStep} />
-        </button>
+        {!isLiveSource && (
+          <>
+            <button
+              type="button"
+              onClick={playNext}
+              aria-label="Próxima música"
+              className="navbar-player__icon-button"
+              disabled={!hasNextTrack}
+            >
+              <FontAwesomeIcon icon={faForwardStep} />
+            </button>
 
-        <button
-          type="button"
-          onClick={toggleRepeatTrack}
-          aria-label={repeatMode === 'track' ? 'Desativar repetição da música' : 'Repetir música atual'}
-          aria-pressed={repeatMode === 'track'}
-          className={`navbar-player__icon-button ${repeatMode === 'track' ? 'is-active' : ''}`}
-        >
-          <FontAwesomeIcon icon={faRepeat} />
-        </button>
+            <button
+              type="button"
+              onClick={toggleRepeatTrack}
+              aria-label={repeatMode === 'track' ? 'Desativar repetição da música' : 'Repetir música atual'}
+              aria-pressed={repeatMode === 'track'}
+              className={`navbar-player__icon-button ${repeatMode === 'track' ? 'is-active' : ''}`}
+            >
+              <FontAwesomeIcon icon={faRepeat} />
+            </button>
+          </>
+        )}
       </div>
     </div>
   );

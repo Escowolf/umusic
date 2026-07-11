@@ -8,6 +8,7 @@ import '../css/Forms.css';
 export function Cadastro() {
   const [formData, setFormData] = useState({
     email: "",
+    username: "",
     emailVerify: "",
     senha: "",
     dataNascimento: "",
@@ -25,14 +26,23 @@ export function Cadastro() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const { email, senha, dataNascimento, nome } = formData;
+    const { email, username, senha, dataNascimento, nome } = formData;
 
     if (formData.email !== formData.emailVerify) {
       toast.error("Os e-mails não correspondem.");
       return;
     }
 
-    axios.post('http://localhost:4000/usuarios', { email, senha, data: dataNascimento, nome })
+    axios.post('http://localhost:4000/usuarios', {
+      email,
+      username,
+      senha,
+      data: dataNascimento,
+      nome,
+      displayName: nome,
+      user_photo: '',
+      bio: '',
+    })
       .then(() => {
         toast.success("Usuário cadastrado com sucesso.");
         cleanAll();
@@ -45,6 +55,7 @@ export function Cadastro() {
   const cleanAll = () => {
     setFormData({
       email: "",
+      username: "",
       emailVerify: "",
       senha: "",
       dataNascimento: "",
@@ -87,6 +98,15 @@ export function Cadastro() {
           type="email"
           onChange={handleChange}
           placeholder="E-mail"
+          required
+        /><br />
+        <input
+          className="form-item"
+          id="username"
+          value={formData.username}
+          type="text"
+          onChange={handleChange}
+          placeholder="Username"
           required
         /><br />
         <input

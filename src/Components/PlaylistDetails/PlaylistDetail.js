@@ -1,8 +1,9 @@
-import React, { useEffect, useState, useContext } from 'react';
+import { useEffect, useState } from 'react';
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import AudioPlayer from '../AudioPlayer';
 import { useAuth } from '../../contexts/AuthContext'
+import toast from 'react-hot-toast';
 import './PlaylistDetail.css';
 
 function PlaylistDetail() {
@@ -20,7 +21,7 @@ function PlaylistDetail() {
         setPlaylistSelecionada(res.data);
       })
       .catch(() => {
-        // Se ocorrer um erro na requisição, os valores padrão serão mantidos
+        toast.error('Não foi possível carregar a playlist.');
       });
   }, [_id]);
 
@@ -47,7 +48,7 @@ function PlaylistDetail() {
     <>
       <div id="playlist-header" className="playlist-header">
         <div className="playlist-info-general">
-          <img className="playlist-photo" src={playlistSelecionada.capa} alt="Capa do álbum" />
+          <img className="playlist-photo" src={playlistSelecionada.capa} alt="" />
           <p className="playlist-main-title">{playlistSelecionada.nome}</p>
         </div>
       </div>

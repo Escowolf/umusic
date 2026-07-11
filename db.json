@@ -271,18 +271,16 @@
       "name": "s",
       "cover": "sss",
       "created_at": "2024-07-25"
+    },
+    {
+      "name": "t",
+      "cover": "",
+      "created_at": "2026-07-11",
+      "id": "YdUhxh7"
     }
   ],
   "usuarios": [
     {
-      "seguindo": 3,
-      "seguidores": 5,
-      "email": "es@g.com",
-      "user_photo": "https://www.academia.org.br/sites/default/files/conteudo/a-lideranca-de-machado-de-assis-1.jpg",
-      "username": "happyUser",
-      "senha": "123456",
-      "data": "2022-05-04",
-      "nome": "ezequielss",
       "id": "1"
     },
     {

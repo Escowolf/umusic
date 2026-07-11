@@ -1,102 +1,165 @@
-.login-form,
-.cadastro-form {
+.auth-form,
+.box-form {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  height: 100%;
-  margin: 0 auto;
-  max-width: 40vh;
-  padding: 5%;
-}
-
-.logo-form {
-  max-height: 85px;
+  gap: 14px;
 }
 
 .form-social {
   display: flex;
   justify-content: center;
+  gap: 12px;
 }
 
 .form-social .item {
-  border-radius: 50%;
-  border: none;
-  margin: 1vw;
-  font-size: 4vh;
-  color:var(--Hover)
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border: 1px solid rgba(93, 26, 74, 0.12);
+  border-radius: 999px;
+  font-size: 1.1rem;
+  color: var(--IconesLinks);
+  background: #fff;
+  box-shadow: 0 10px 24px rgba(21, 18, 25, 0.06);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, color 0.2s ease;
 }
 
 .form-social .item:hover {
-  border-radius: 50%;
-  border: none;
-  margin: 1vw;
-  font-size: 4vh;
-  color:var(--Background)
+  transform: translateY(-2px);
+  color: var(--Hover);
+  box-shadow: 0 14px 28px rgba(21, 18, 25, 0.1);
 }
 
-hr {
-  width: 100%;
-  margin-bottom: 10%;
+.auth-divider {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  color: rgba(51, 51, 51, 0.55);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+.auth-divider::before,
+.auth-divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: rgba(51, 51, 51, 0.12);
+}
+
+.auth-divider span {
+  white-space: nowrap;
+}
+
+.form-inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
 .form-item {
-  width: 90%;
-  height: 38px;
-  border-radius: 5px;
-  margin-bottom: 10px;
-  padding: 10px;
-  border: none;
+  width: 100%;
+  min-height: 50px;
+  border-radius: 14px;
+  border: 1px solid rgba(51, 51, 51, 0.12);
+  background: rgba(255, 255, 255, 0.92);
+  padding: 0 16px;
+  box-sizing: border-box;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.form-item:focus {
+  outline: none;
+  border-color: rgba(229, 113, 71, 0.5);
+  box-shadow: 0 0 0 4px rgba(229, 113, 71, 0.12);
 }
 
 .form-personal {
-  display: flex;
-  justify-content: left;
-  padding-bottom: 15px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  padding-bottom: 2px;
 }
 
 .form-choice {
-  display: block;
-  width: 50%;
-  justify-content: left;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
   text-align: left;
 }
 
 .form-label {
-  padding-bottom: 10px;
   font-weight: 700;
+  color: var(--Texto);
 }
 
 .form-data {
-  width: 80%;
-  padding: 10px;
+  width: 100%;
+  min-height: 50px;
+  padding: 0 16px;
+  border-radius: 14px;
+  border: 1px solid rgba(51, 51, 51, 0.12);
+  background: rgba(255, 255, 255, 0.92);
+  box-sizing: border-box;
+}
+
+.form-radio {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: rgba(51, 51, 51, 0.88);
 }
 
 .submit-button {
-  width: 95%;
-  height: 48px;
-  border-radius: 5px;
-  font-size: 16px;
+  width: 100%;
+  min-height: 52px;
+  border-radius: 14px;
   border: none;
-  color:var(--Background);
-  background-color: var(--Hover);
-  font-weight: 600;
+  color: #fff;
+  background: linear-gradient(135deg, var(--Hover), var(--IconesLinks));
+  font-size: 1rem;
+  font-weight: 700;
+  box-shadow: 0 14px 28px rgba(93, 26, 74, 0.18);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
 }
 
 .submit-button:hover {
-  width: 95%;
-  height: 48px;
-  border-radius: 5px;
-  font-size: 16px;
-  border: none;
-  color:var(--IconesLinks);
-  background-color: var(--Background);
-  font-weight: 600;
+  transform: translateY(-1px);
+  filter: brightness(1.03);
+  box-shadow: 0 18px 32px rgba(93, 26, 74, 0.22);
+  color: #fff;
 }
 
+.error-message {
+  margin: 0;
+  padding: 12px 14px;
+  border-radius: 12px;
+  background: rgba(200, 50, 50, 0.08);
+  color: #b42318;
+  text-align: left;
+}
 
+.auth-switch {
+  margin: 0;
+}
+
+.auth-switch a,
 .highlight {
-  color: var(--Background);
+  color: var(--IconesLinks);
+  font-weight: 700;
   text-decoration: none;
+}
+
+.auth-switch a:hover,
+.highlight:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 900px) {
+  .form-personal {
+    grid-template-columns: 1fr;
+  }
 }

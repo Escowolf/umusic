@@ -42,18 +42,27 @@ function Navbar() {
             </div>
           ) : (
             <div className="nav-user">
-              <div className="user-container" onClick={toggleDropdown}>
-                <div className="dropdown-toggle">
+              <div className="user-container">
+                <button
+                  type="button"
+                  className="dropdown-toggle"
+                  onClick={toggleDropdown}
+                  aria-haspopup="menu"
+                  aria-expanded={dropdownOpen}
+                  aria-label="Abrir menu do usuário"
+                >
                   <img src={currentUser?.user_photo} alt="User" className="user-avatar" />
-                  <p className="user-name"><strong>{currentUser?.username}</strong></p>
-                  <i className="fa-solid fa-caret-down"></i>
-                </div>
+                  <span className="user-name">{currentUser?.username}</span>
+                  <i className="fa-solid fa-caret-down" aria-hidden="true"></i>
+                </button>
                 {dropdownOpen && (
-                  <div className="dropdown-content">
-                    <Link className="dropdown-item" to="/newplaylist">Nova Playlist</Link>
-                    <Link className="dropdown-item" to="/perfil">Perfil</Link>
+                  <div className="dropdown-content" role="menu" aria-label="Menu do usuário">
+                    <Link className="dropdown-item" to="/newplaylist" role="menuitem">Nova Playlist</Link>
+                    <Link className="dropdown-item" to="/perfil" role="menuitem">Perfil</Link>
                     <hr className="dropdown-divider" />
-                    <button className="dropdown-btn" onClick={handleLogout}>Sair <i className="fa-solid fa-power-off" /></button>
+                    <button className="dropdown-btn" onClick={handleLogout} type="button">
+                      Sair <i className="fa-solid fa-power-off" aria-hidden="true" />
+                    </button>
                   </div>
                 )}
               </div>

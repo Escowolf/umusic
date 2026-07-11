@@ -1,8 +1,9 @@
 import { useState } from "react";
 import axios from "axios";
-import logo from '../img/logoUmus.png';
 import { Link } from "react-router-dom";
 import { useAuth } from '../../contexts/AuthContext'; 
+import AuthLayout from '../../Components/Auth/AuthLayout';
+import toast from 'react-hot-toast';
 import '../css/Forms.css';
 
 function Login() {
@@ -20,59 +21,72 @@ function Login() {
 
             if (!usuario) {
                 setError("Usuário não encontrado!");
+                toast.error("Usuário não encontrado.");
                 return;
             }
 
             if (usuario.senha !== senha) {
                 setError("Senha incorreta!");
+                toast.error("Senha incorreta.");
                 return;
             } else {
                 login(usuario);
+                toast.success("Login realizado com sucesso.");
             }
 
         } catch (err) {
             console.error('API error:', err);
             setError("Ocorreu um erro. Tente novamente.");
+            toast.error("Ocorreu um erro. Tente novamente.");
         }
     };
 
     return (
-        <form onSubmit={handleSubmit} className="login-form">
-            <img src={logo} className="logo-form" alt="Logo site" />
-            <h1>Log in to uMusic</h1>
-            <span className="form-social">
-                <i className="item fa-brands fa-facebook"></i>
-                <i className="item fa-brands fa-google"></i>
-                <i className="item fa-brands fa-apple"></i>
-            </span>
-            <hr />
-            {error && <p className="error-message">{error}</p>}
-            <div className="form-inputs">
-                <input
-                    className="form-item"
-                    id="email"
-                    value={email}
-                    type="email"
-                    onChange={(e) => setEmail(e.target.value)}
-                    placeholder="E-mail"
-                    required
-                />
-                <input
-                    className="form-item"
-                    id="password"
-                    type="password"
-                    value={senha}
-                    onChange={(e) => setSenha(e.target.value)}
-                    placeholder="Senha"
-                    required
-                />
-            </div>
-            <button type="submit" className="submit-button">Enviar</button>
-            <p className="signup-link">
-                Não tem cadastro?&nbsp;
-                <Link to="/signup" className="highlight">Inscreva-se!</Link>
-            </p>
-        </form>
+        <AuthLayout
+            eyebrow="Bem-vindo de volta"
+            title="Entrar"
+            subtitle="Acesse sua conta para continuar sua experiência musical."
+            footer={
+                <p className="auth-switch">
+                    Não tem cadastro? <Link to="/signup">Criar conta</Link>
+                </p>
+            }
+        >
+            <form onSubmit={handleSubmit} className="auth-form">
+                <span className="form-social">
+                    <i className="item fa-brands fa-facebook"></i>
+                    <i className="item fa-brands fa-google"></i>
+                    <i className="item fa-brands fa-apple"></i>
+                </span>
+
+                <div className="auth-divider"><span>ou use seu e-mail</span></div>
+
+                {error && <p className="error-message">{error}</p>}
+                <div className="form-inputs">
+                    <input
+                        className="form-item"
+                        id="email"
+                        value={email}
+                        type="email"
+                        onChange={(e) => setEmail(e.target.value)}
+                        placeholder="E-mail"
+                        autoComplete="email"
+                        required
+                    />
+                    <input
+                        className="form-item"
+                        id="password"
+                        type="password"
+                        value={senha}
+                        onChange={(e) => setSenha(e.target.value)}
+                        placeholder="Senha"
+                        autoComplete="current-password"
+                        required
+                    />
+                </div>
+                <button type="submit" className="submit-button">Entrar</button>
+            </form>
+        </AuthLayout>
     );
 }
 

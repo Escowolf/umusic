@@ -6,9 +6,9 @@ function Footer() {
       <nav className="footer">
         <p className='special-text'> © 2024. Desenvolvimento para plataformas web. Nulamar. </p>
         <ul className="nav-footer-items">
-          <a href="#"><i className="fa-brands fa-facebook special-text" /></a>
-          <a href="#"><i className="fa-brands fa-instagram special-text " /></a>
-          <a href="#"><i className="fa-brands fa-linkedin special-text" /></a>
+          <li><button type="button" className="footer-icon" aria-label="Facebook"><i className="fa-brands fa-facebook special-text" /></button></li>
+          <li><button type="button" className="footer-icon" aria-label="Instagram"><i className="fa-brands fa-instagram special-text " /></button></li>
+          <li><button type="button" className="footer-icon" aria-label="LinkedIn"><i className="fa-brands fa-linkedin special-text" /></button></li>
         </ul>
       </nav>
     </footer>

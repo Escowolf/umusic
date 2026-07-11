@@ -65,16 +65,18 @@ function HomeUser() {
           <img
             src={currentUser?.user_photo}
             className="home-photo"
-            alt="User photo"
+            alt=""
           />
           <div className='home-text-container'>
             <h2 className='home-name'>
               {currentUser?.nome}
             </h2>
-            <p>{currentUser?.seguidores} seguidores - {currentUser?.seguindo} seguindo</p>
+            <p className="home-follow-data">{currentUser?.seguidores} seguidores - {currentUser?.seguindo} seguindo</p>
           </div>
         </div>
-        <Navhome setSection={setSection} />
+        <div className="home-tabs">
+          <Navhome setSection={setSection} section={section} />
+        </div>
       </div>
       <div className="home-content">
         {renderSection()}

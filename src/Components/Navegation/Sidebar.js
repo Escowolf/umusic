@@ -3,7 +3,8 @@ import { Link } from 'react-router-dom';
 
 function Sidebar() {
     return (
-        <div className='sidebar'>
+        <div className='sidebar app-sidebar'>
+            <Link to="/home" className="sidebar-item"><i className='fa-solid fa-house' /><p className='link-label'>Início</p></Link>
             <Link to="/newplaylist" className="sidebar-item"><i className='fa-solid fa-headphones' /><p className='link-label'>Criar Playlist</p></Link>
             <Link to="#" className="sidebar-item"><i className='fa-solid fa-music' /><p className='link-label'>Músicas</p></Link>
             <Link to="#" className="sidebar-item"><i className='fa-solid fa-search' /><p className='link-label'>Explorar</p></Link>

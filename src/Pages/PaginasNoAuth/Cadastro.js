@@ -1,7 +1,8 @@
 import { useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import logo from '../img/logoUmus.png';
+import AuthLayout from '../../Components/Auth/AuthLayout';
+import toast from 'react-hot-toast';
 import '../css/Forms.css';
 
 export function Cadastro() {
@@ -26,10 +27,18 @@ export function Cadastro() {
 
     const { email, senha, dataNascimento, nome } = formData;
 
+    if (formData.email !== formData.emailVerify) {
+      toast.error("Os e-mails não correspondem.");
+      return;
+    }
+
     axios.post('http://localhost:4000/usuarios', { email, senha, data: dataNascimento, nome })
       .then(() => {
-        alert("Usuário cadastrado com sucesso!");
+        toast.success("Usuário cadastrado com sucesso.");
         cleanAll();
+      })
+      .catch(() => {
+        toast.error("Não foi possível concluir o cadastro.");
       });
   };
 
@@ -45,17 +54,32 @@ export function Cadastro() {
 
   const comparaEmail = () => {
     if (formData.email !== formData.emailVerify) {
-      alert("Os e-mails não correspondem!");
+      toast.error("Os e-mails não correspondem.");
     } else {
-      console.log("Tudo ok!");
+      toast.success("E-mails conferem.");
     }
   };
 
   return (
-    <div className="cadastro-form">
-      <img src={logo} className="logo-form" alt="Logo site" />
-      <h1>Sing up to start using</h1>
+    <AuthLayout
+      eyebrow="Crie sua conta"
+      title="Cadastrar"
+      subtitle="Cadastre-se para salvar playlists, seguir artistas e voltar de onde parou."
+      footer={
+        <p className="auth-switch">
+          Já possui conta? <Link to="/login">Entrar</Link>
+        </p>
+      }
+    >
       <form className="box-form" onSubmit={handleSubmit}>
+        <span className="form-social">
+          <i className="item fa-brands fa-facebook"></i>
+          <i className="item fa-brands fa-google"></i>
+          <i className="item fa-brands fa-apple"></i>
+        </span>
+
+        <div className="auth-divider"><span>ou preencha seus dados</span></div>
+
         <input
           className="form-item"
           id="email"
@@ -122,10 +146,9 @@ export function Cadastro() {
           </div>
         </div>
 
-        <button type="submit" className="submit-button">Enviar</button>
-        <p> Already have an account? Log in <Link to="/login" className="highlight">here</Link>.</p>
+        <button type="submit" className="submit-button">Criar conta</button>
       </form>
-    </div>
+    </AuthLayout>
   );
 }
 

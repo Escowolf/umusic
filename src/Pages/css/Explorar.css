@@ -13,10 +13,10 @@
   padding: 24px;
   border-radius: 28px;
   background:
-    radial-gradient(circle at top left, rgba(93, 26, 74, 0.14), transparent 30%),
+    radial-gradient(circle at top left, rgba(143, 102, 244, 0.12), transparent 30%),
     radial-gradient(circle at bottom right, rgba(229, 113, 71, 0.16), transparent 28%),
-    linear-gradient(135deg, #fbf8f6, #efe9e3);
-  box-shadow: 0 18px 40px rgba(21, 18, 25, 0.08);
+    linear-gradient(135deg, rgba(31, 24, 43, 0.96), rgba(20, 16, 28, 0.96));
+  box-shadow: var(--Shadow);
 }
 
 .explore-hero__badge {
@@ -55,7 +55,7 @@
 
 .explore-hero p {
   margin: 0;
-  color: #333333b8;
+  color: var(--TextoSecundario);
   line-height: 1.5;
   max-width: 70ch;
 }
@@ -68,11 +68,12 @@
   width: 100%;
   min-height: 52px;
   border-radius: 16px;
-  border: 1px solid #3333331f;
-  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid var(--BorderSubtle);
+  background: var(--Surface);
   padding: 0 16px;
   box-sizing: border-box;
   font: inherit;
+  color: var(--Texto);
 }
 
 .explore-chips {
@@ -83,8 +84,8 @@
 
 .explore-chip {
   appearance: none;
-  border: 1px solid rgba(93, 26, 74, 0.12);
-  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid var(--BorderSubtle);
+  background: var(--Surface);
   color: var(--Texto);
   border-radius: 999px;
   padding: 10px 14px;
@@ -94,9 +95,9 @@
 
 .explore-chip:hover,
 .explore-chip.is-active {
-  border-color: rgba(229, 113, 71, 0.35);
-  color: var(--IconesLinks);
-  background: rgba(93, 26, 74, 0.08);
+  border-color: var(--BorderAccent);
+  color: var(--Texto);
+  background: rgba(229, 113, 71, 0.1);
 }
 
 .explore-loading,
@@ -106,10 +107,10 @@
   justify-content: center;
   gap: 10px;
   min-height: 160px;
-  background: rgba(255, 255, 255, 0.88);
-  border: 1px solid rgba(51, 51, 51, 0.08);
+  background: var(--Surface);
+  border: 1px solid var(--BorderSubtle);
   border-radius: 24px;
-  box-shadow: 0 10px 24px rgba(21, 18, 25, 0.06);
+  box-shadow: var(--Shadow);
   color: var(--Texto);
 }
 
@@ -140,7 +141,7 @@
 
 .explore-section__header p {
   margin: 4px 0 0;
-  color: #333333b8;
+  color: var(--TextoSecundario);
 }
 
 .explore-grid {
@@ -182,9 +183,9 @@
   align-items: center;
   justify-content: center;
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.92);
+  background: var(--SurfaceStrong);
   color: var(--IconesLinks);
-  box-shadow: 0 10px 24px rgba(21, 18, 25, 0.16);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.28);
 }
 
 .explore-card__body {
@@ -205,7 +206,7 @@
 
 .explore-card__body p,
 .explore-card__meta {
-  color: #333333b8;
+  color: var(--TextoSecundario);
   font-size: 0.9rem;
 }
 
@@ -223,7 +224,7 @@
   padding: 14px 16px;
   border: 1px solid rgba(93, 26, 74, 0.12);
   border-radius: 20px;
-  background: rgba(255, 255, 255, 0.92);
+  background: var(--Surface);
   box-shadow: 0 10px 24px rgba(21, 18, 25, 0.06);
   cursor: pointer;
   text-align: left;
@@ -259,7 +260,7 @@
 }
 
 .explore-track__meta span {
-  color: #333333b8;
+  color: var(--TextoSecundario);
   font-size: 0.9rem;
 }
 

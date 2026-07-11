@@ -13,9 +13,10 @@
   padding: 22px 24px;
   border-radius: 28px;
   background:
-    radial-gradient(circle at top left, rgba(229, 113, 71, 0.16), transparent 30%),
-    linear-gradient(135deg, #f7f4f2, #efe7e1);
-  box-shadow: 0 18px 40px rgba(21, 18, 25, 0.08);
+    radial-gradient(circle at top left, rgba(229, 113, 71, 0.18), transparent 30%),
+    radial-gradient(circle at bottom right, rgba(143, 102, 244, 0.12), transparent 28%),
+    linear-gradient(135deg, rgba(31, 24, 43, 0.96), rgba(20, 16, 28, 0.96));
+  box-shadow: var(--Shadow);
 }
 
 .discovery-hero__icon {
@@ -54,7 +55,7 @@
 
 .discovery-hero p {
   margin: 0;
-  color: #333333b8;
+  color: var(--TextoSecundario);
   line-height: 1.5;
   max-width: 68ch;
 }
@@ -72,11 +73,12 @@
 .settings-range {
   min-height: 52px;
   border-radius: 16px;
-  border: 1px solid #3333331f;
-  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid var(--BorderSubtle);
+  background: var(--Surface);
   padding: 0 16px;
   box-sizing: border-box;
   font: inherit;
+  color: var(--Texto);
 }
 
 .discovery-search {
@@ -95,10 +97,10 @@
   justify-content: center;
   gap: 10px;
   min-height: 170px;
-  background: rgba(255, 255, 255, 0.88);
-  border: 1px solid rgba(51, 51, 51, 0.08);
+  background: var(--Surface);
+  border: 1px solid var(--BorderSubtle);
   border-radius: 24px;
-  box-shadow: 0 10px 24px rgba(21, 18, 25, 0.06);
+  box-shadow: var(--Shadow);
   color: var(--Texto);
 }
 
@@ -118,8 +120,8 @@
 .settings-danger {
   border: 1px solid rgba(93, 26, 74, 0.12);
   border-radius: 22px;
-  background: rgba(255, 255, 255, 0.92);
-  box-shadow: 0 10px 24px rgba(21, 18, 25, 0.06);
+  background: var(--Surface);
+  box-shadow: var(--Shadow);
 }
 
 .discovery-card {
@@ -157,7 +159,7 @@
 
 .discovery-card__meta,
 .muted {
-  color: #333333b8;
+  color: var(--TextoSecundario);
   font-size: 0.9rem;
 }
 
@@ -186,14 +188,14 @@
 
 .btn,
 .settings-save {
-  background: var(--IconesLinks);
+  background: linear-gradient(135deg, var(--Hover), var(--AccentSecondary));
   color: #fff;
 }
 
 .btn--ghost,
 .tab-btn {
-  background: rgba(93, 26, 74, 0.08);
-  color: var(--IconesLinks);
+  background: rgba(229, 113, 71, 0.1);
+  color: var(--Texto);
 }
 
 .tabs-bar {
@@ -204,7 +206,7 @@
 }
 
 .tab-btn.is-active {
-  background: var(--IconesLinks);
+  background: linear-gradient(135deg, var(--Hover), var(--AccentSecondary));
   color: #fff;
 }
 
@@ -260,8 +262,8 @@
   min-height: 100%;
   padding: 18px;
   border-radius: 22px;
-  border: 1px dashed rgba(93, 26, 74, 0.18);
-  background: rgba(93, 26, 74, 0.03);
+  border: 1px dashed var(--BorderAccent);
+  background: rgba(229, 113, 71, 0.05);
 }
 
 .settings-photo-input {
@@ -279,10 +281,10 @@
 
 .settings-photo-btn {
   width: fit-content;
-  border: 1px solid rgba(93, 26, 74, 0.14);
+  border: 1px solid var(--BorderAccent);
   border-radius: 999px;
-  background: rgba(93, 26, 74, 0.08);
-  color: var(--IconesLinks);
+  background: rgba(229, 113, 71, 0.08);
+  color: var(--Texto);
   padding: 10px 14px;
   cursor: pointer;
   font: inherit;
@@ -290,7 +292,7 @@
 }
 
 .settings-photo-btn:hover {
-  background: rgba(93, 26, 74, 0.14);
+  background: rgba(229, 113, 71, 0.14);
 }
 
 .settings-avatar {
@@ -332,7 +334,7 @@
 
 .settings-danger {
   padding: 18px;
-  background: rgba(229, 113, 71, 0.06);
+  background: rgba(229, 113, 71, 0.08);
 }
 
 .settings-actions--right {
@@ -361,7 +363,7 @@
 
 .section-title p {
   margin: 4px 0 0;
-  color: #333333b8;
+  color: var(--TextoSecundario);
 }
 
 @media (max-width: 900px) {

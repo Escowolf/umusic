@@ -7,7 +7,7 @@ import './Navbar.css';
 function Navbar() {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [isResponsive, setIsResponsive] = useState(false);
-  const [isLightMode, setIsLightMode] = useState(false);
+  const [isLightMode, setIsLightMode] = useState(() => !document.documentElement.classList.contains("dark-mode"));
   const { isAuthenticated, logout, currentUser } = useAuth();
   const navigate = useNavigate();
 
@@ -25,8 +25,11 @@ function Navbar() {
   };
 
   const toggleLightMode = () => {
-    setIsLightMode(prevState => !prevState);
-    document.documentElement.classList.toggle("dark-mode", !isLightMode);
+    setIsLightMode(prevState => {
+      const nextState = !prevState;
+      document.documentElement.classList.toggle("dark-mode", !nextState);
+      return nextState;
+    });
   };
 
   return (
@@ -34,9 +37,11 @@ function Navbar() {
         <Link to={isAuthenticated && currentUser ? "/home" : "/"} className="nav-logo">
           <p className="logo-name">uMusic</p>
         </Link>
-        <div className="nav-center">
-          <AudioPlayer compact />
-        </div>
+        {isAuthenticated && (
+          <div className="nav-center">
+            <AudioPlayer compact />
+          </div>
+        )}
         <div className="nav-drop">
           {!isAuthenticated ? (
             <div className="nav-drop-content">

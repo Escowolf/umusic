@@ -2,7 +2,8 @@
     align-items: flex-start;
     background:
         radial-gradient(circle at top left, rgba(229, 113, 71, 0.16), transparent 28%),
-        linear-gradient(135deg, #f7f4f2, #efe7e1);
+        radial-gradient(circle at bottom right, rgba(143, 102, 244, 0.12), transparent 26%),
+        linear-gradient(135deg, rgba(31, 24, 43, 0.96), rgba(20, 16, 28, 0.96));
     box-sizing: border-box;
     display: flex;
     justify-content: center;
@@ -11,9 +12,9 @@
 }
 
 .create-playlist-form {
-    background: rgba(255, 255, 255, 0.92);
+    background: var(--Surface);
     border-radius: 28px;
-    box-shadow: 0 18px 40px rgba(21, 18, 25, 0.12);
+    box-shadow: var(--Shadow);
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -29,7 +30,7 @@
 }
 
 .create-playlist-intro p {
-    color: #333333b8;
+    color: var(--TextoSecundario);
     line-height: 1.5;
     margin: 10px 0 0;
 }
@@ -61,8 +62,8 @@
 }
 
 .form-control {
-    background: #ffffffeb;
-    border: 1px solid #3333331f;
+    background: var(--Surface);
+    border: 1px solid var(--BorderSubtle);
     border-radius: 14px;
     box-sizing: border-box;
     min-height: 52px;
@@ -76,7 +77,7 @@
 
 .upload-box {
     align-items: center;
-    border: 1px dashed #e5714780;
+    border: 1px dashed var(--BorderAccent);
     border-radius: 16px;
     color: var(--IconesLinks);
     display: flex;
@@ -86,7 +87,7 @@
 
 .cover-preview {
     border-radius: 20px;
-    box-shadow: 0 14px 30px rgba(21, 18, 25, 0.12);
+    box-shadow: var(--Shadow);
     overflow: hidden;
 }
 
@@ -98,8 +99,8 @@
 }
 
 .music-picker {
-    background: #fff;
-    border: 1px solid #33333312;
+    background: var(--Surface);
+    border: 1px solid var(--BorderSubtle);
     border-radius: 24px;
     display: flex;
     flex-direction: column;
@@ -120,7 +121,7 @@
 }
 
 .music-picker-header p {
-    color: #333333b8;
+    color: var(--TextoSecundario);
     margin: 6px 0 0;
 }
 
@@ -131,8 +132,8 @@
 }
 
 .music-card {
-    background: #ffffffeb;
-    border: 1px solid #3333331f;
+    background: var(--Surface);
+    border: 1px solid var(--BorderSubtle);
     border-radius: 16px;
     cursor: pointer;
     display: flex;
@@ -142,8 +143,8 @@
 }
 
 .music-card:hover {
-    border-color: #e5714780;
-    box-shadow: 0 10px 22px rgba(21, 18, 25, 0.08);
+    border-color: var(--BorderAccent);
+    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.18);
     transform: translateY(-1px);
 }
 
@@ -158,13 +159,13 @@
 }
 
 .music-card span {
-    color: #333333b8;
+    color: var(--TextoSecundario);
     font-size: 0.92rem;
 }
 
 .music-card.is-selected {
     border-color: var(--IconesLinks);
-    box-shadow: 0 10px 22px rgba(93, 26, 74, 0.12);
+    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.18);
 }
 
 .button {

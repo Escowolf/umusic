@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/static/css/main.5d841760.css",
-    "main.js": "/static/js/main.f57a9727.js",
+    "main.css": "/static/css/main.3638222b.css",
+    "main.js": "/static/js/main.eb8a8918.js",
     "static/media/logoUmus.png": "/static/media/logoUmus.1ce8b900c50b0eb63400.png",
     "static/media/concentrad.jpg": "/static/media/concentrad.c535920ae08e11cf93ec.jpg",
     "static/media/favicon.optimized.svg": "/static/media/favicon.optimized.da8af004f4bfab44c99ed6d6d7ef1b82.svg",
     "index.html": "/index.html",
-    "main.5d841760.css.map": "/static/css/main.5d841760.css.map",
-    "main.f57a9727.js.map": "/static/js/main.f57a9727.js.map"
+    "main.3638222b.css.map": "/static/css/main.3638222b.css.map",
+    "main.eb8a8918.js.map": "/static/js/main.eb8a8918.js.map"
   },
   "entrypoints": [
-    "static/css/main.5d841760.css",
-    "static/js/main.f57a9727.js"
+    "static/css/main.3638222b.css",
+    "static/js/main.eb8a8918.js"
   ]
 }

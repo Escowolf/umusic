@@ -1,19 +1,26 @@
 :root {
-  /* variables light-mode */
   min-width: 250px;
   --header-height: 72px;
   --sidebar-width: 240px;
-  --Texto: #333333;
-  --TextoSecundario: #F5F5F5;
-  --BackgroundSidebar: #e57147c4;
-  --Background: #F5F5F5;
-  --Hover: #E57147;
-  --IconesLinks: #5D1A4A;
-  --Navbar: #E57147;
-  --Footer: #2A2A2A;
-
-  --Transform: #d0d0d0c1;
-  --Shadow: 0 0 0.2em #ffffff, 0 0 0.2em #ded8ff, 0 0 0.2em #747474;
+  --Texto: #2d2338;
+  --TextoSecundario: #5f536f;
+  --Background: #f7f3fb;
+  --BackgroundElevado: #ffffff;
+  --BackgroundElevado2: #f0e9f7;
+  --BackgroundSidebar: rgba(255, 246, 240, 0.94);
+  --Hover: #e57147;
+  --IconesLinks: #e57147;
+  --AccentSecondary: #8f66f4;
+  --Navbar: rgba(255, 246, 240, 0.9);
+  --Footer: rgba(247, 243, 251, 0.96);
+  --BorderSubtle: rgba(45, 35, 56, 0.08);
+  --BorderAccent: rgba(229, 113, 71, 0.22);
+  --Surface: rgba(255, 255, 255, 0.92);
+  --SurfaceStrong: rgba(255, 255, 255, 0.98);
+  --Transform: rgba(229, 224, 239, 0.9);
+  --Shadow: 0 18px 40px rgba(42, 30, 61, 0.12);
+  --PageGlow: radial-gradient(circle at top left, rgba(229, 113, 71, 0.12), transparent 34%),
+    radial-gradient(circle at top right, rgba(143, 102, 244, 0.08), transparent 30%);
 
 
   color: var(--Texto);
@@ -25,17 +32,25 @@
 }
 
 .dark-mode {
-  --Texto: #F2F2F2;
-  --TextoSecundario: #1E1E1E;
-  --BackgroundSidebar: #5D1A4Ac4;
-  --Background: #2A2A2A;
-  --Hover: #5D1A4A;
-  --IconesLinks: #E57147;
-  --Navbar: #5D1A4A;
-  --Footer: #2A2A2A;
-
-  --Transform: #2a2a2ac1;
-  --Shadow: 0 0 0.2em #000000, 0 0 0.2em #8877FF, 0 0 0.2em #100270;
+  --Texto: #f2edf8;
+  --TextoSecundario: #cfc4de;
+  --Background: #120f18;
+  --BackgroundElevado: #1b1624;
+  --BackgroundElevado2: #241c31;
+  --BackgroundSidebar: rgba(29, 21, 39, 0.96);
+  --Hover: #e57147;
+  --IconesLinks: #f28b5e;
+  --AccentSecondary: #a77dff;
+  --Navbar: rgba(22, 16, 30, 0.92);
+  --Footer: rgba(14, 10, 18, 0.96);
+  --BorderSubtle: rgba(255, 255, 255, 0.08);
+  --BorderAccent: rgba(242, 139, 94, 0.22);
+  --Surface: rgba(26, 20, 36, 0.94);
+  --SurfaceStrong: rgba(34, 26, 48, 0.98);
+  --Transform: rgba(20, 15, 27, 0.9);
+  --Shadow: 0 22px 44px rgba(0, 0, 0, 0.42);
+  --PageGlow: radial-gradient(circle at top left, rgba(229, 113, 71, 0.16), transparent 32%),
+    radial-gradient(circle at bottom right, rgba(143, 102, 244, 0.14), transparent 28%);
 }
 
 body {
@@ -45,6 +60,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: var(--Background);
+  color: var(--Texto);
 }
 
 html,
@@ -100,9 +117,10 @@ code {
 }
 
 .grid-item {
-  background-color: #E57147;
+  background: linear-gradient(135deg, var(--Hover), var(--AccentSecondary));
   color: #fdfdfd;
-  border-radius: 5px;
+  border-radius: 12px;
+  box-shadow: var(--Shadow);
 }
 
 @media (max-width:900px) {

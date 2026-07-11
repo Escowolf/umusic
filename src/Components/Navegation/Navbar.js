@@ -1,6 +1,7 @@
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from '../../contexts/AuthContext';
 import { useState } from "react";
+import AudioPlayer from "../AudioPlayer";
 import './Navbar.css';
 
 function Navbar() {
@@ -33,6 +34,9 @@ function Navbar() {
         <Link to={isAuthenticated && currentUser ? "/home" : "/"} className="nav-logo">
           <p className="logo-name">uMusic</p>
         </Link>
+        <div className="nav-center">
+          <AudioPlayer compact />
+        </div>
         <div className="nav-drop">
           {!isAuthenticated ? (
             <div className="nav-drop-content">

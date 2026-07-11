@@ -3,6 +3,7 @@ import Navbar from './Components/Navegation/Navbar';
 import Footer from './Components/Navegation/Footer';
 import RoutesConfig from './Routes/RoutesConfig';
 import { AuthProvider, useAuth } from './contexts/AuthContext';
+import { PlayerProvider } from './contexts/PlayerContext';
 import './App.css';
 import Sidebar from './Components/Navegation/Sidebar';
 import { Toaster } from 'react-hot-toast';
@@ -37,7 +38,9 @@ function App() {
 export default function AppWithProvider() {
   return (
     <AuthProvider>
-      <App />
+      <PlayerProvider>
+        <App />
+      </PlayerProvider>
     </AuthProvider>
   );
 }

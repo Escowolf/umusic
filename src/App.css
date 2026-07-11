@@ -124,4 +124,8 @@ code {
     grid-column: 1;
   }
 
+  .main-content {
+    padding-bottom: 96px;
+  }
+
 }

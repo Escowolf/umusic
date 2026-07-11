@@ -3,6 +3,19 @@ import { useNavigate } from 'react-router-dom';
 
 const AuthContext = createContext();
 
+const decodeStoredToken = (storedToken) => {
+    try {
+        const payload = JSON.parse(atob(storedToken));
+        if (!payload || !payload.usuario) {
+            return null;
+        }
+
+        return payload;
+    } catch (error) {
+        return null;
+    }
+};
+
 export function AuthProvider({ children }) {
     const [isAuthenticated, setIsAuthenticated] = useState(false);
     const [currentUser, setCurrentUser] = useState(null);
@@ -15,11 +28,15 @@ export function AuthProvider({ children }) {
         const storedToken = localStorage.getItem('token');
 
         if (storedToken) {
-            // Decodifica o token para recuperar o usuário
-            const payload = JSON.parse(atob(storedToken));
-            setToken(storedToken);
-            setCurrentUser(payload.usuario);
-            setIsAuthenticated(true);
+            const payload = decodeStoredToken(storedToken);
+
+            if (payload) {
+                setToken(storedToken);
+                setCurrentUser(payload.usuario);
+                setIsAuthenticated(true);
+            } else {
+                localStorage.removeItem('token');
+            }
         }
     }, []);
 

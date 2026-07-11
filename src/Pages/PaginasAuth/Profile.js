@@ -3,6 +3,15 @@ import { useAuth } from '../../contexts/AuthContext';
 import axios from 'axios';
 import '../css/Profile.css';
 
+const decodeStoredToken = (storedToken) => {
+    try {
+        const payload = JSON.parse(atob(storedToken));
+        return payload?.usuario ?? null;
+    } catch (error) {
+        return null;
+    }
+};
+
 function Profile() {
     const { token, currentUser } = useAuth();
     const [usuario, setUsuario] = useState({ nome: '', user_photo: '' });
@@ -13,9 +22,12 @@ function Profile() {
     useEffect(() => {
         if (token) {
             try {
-                const payloadBase64 = token.split('.')[1];
-                const decodedPayload = JSON.parse(atob(payloadBase64));
-                const userId = decodedPayload.usuario.id;
+                const decodedUser = decodeStoredToken(token);
+                const userId = decodedUser?.id ?? currentUser?.id;
+
+                if (!userId) {
+                    throw new Error('Usuário não encontrado no token');
+                }
 
                 axios.get(`http://localhost:4000/usuarios/${userId}`, {
                     headers: {
@@ -32,7 +44,7 @@ function Profile() {
                 console.error('Token inválido:', e);
             }
         }
-    }, [token]);
+    }, [token, currentUser?.id]);
 
     const handleEditClick = () => {
         setEditMode(true);
@@ -118,4 +130,3 @@ function Profile() {
 }
 
 export default Profile;
-
